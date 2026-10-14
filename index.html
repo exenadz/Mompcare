@@ -1,0 +1,3573 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<title>MOMP CARE — Pendamping Kehamilan & Kearifan Lokal Madura</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+
+<style>
+:root {
+  --pink: #e46285;
+  --pink-dark: #c24367;
+  --pink-deep: #8e314e;
+  --pink2: #f7ced7;
+  --rose: #fce9ec;
+  --peach: #fff4ee;
+  --peach-light: #fffaf7;
+  --ink: #2c2327;
+  --ink-secondary: #584a50;
+  --muted: #7f6d73;
+  --line: #eed4da;
+  --line-light: #f7e8eb;
+  --mint: #45a497;
+  --mint-bg: #e4f5f2;
+  --mint-text: #1f6b61;
+  --blue: #d7eaf1;
+  --blue-text: #2c6375;
+  --gold: #fbedd1;
+  --gold-text: #825a1b;
+  --card-bg: rgba(255, 252, 251, 0.94);
+  --shadow-sm: 0 4px 14px rgba(111, 56, 64, 0.05);
+  --shadow-md: 0 10px 28px rgba(111, 56, 64, 0.09);
+  --shadow-lg: 0 18px 45px rgba(111, 56, 64, 0.13);
+  --radius-lg: 22px;
+  --radius-md: 16px;
+  --radius-sm: 12px;
+  --radius-full: 9999px;
+  --transition: all 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  font-family: 'Plus Jakarta Sans', ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  color: var(--ink);
+  background: #f8ece9;
+  background-image: 
+    radial-gradient(circle at 5% 10%, #fffbf6 0%, transparent 40%),
+    radial-gradient(circle at 95% 20%, #fae2e8 0%, transparent 35%),
+    radial-gradient(circle at 50% 85%, #fbe8ee 0%, transparent 45%);
+  background-attachment: fixed;
+  min-height: 100vh;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar { width: 8px; height: 8px; }
+::-webkit-scrollbar-track { background: #fbebf0; }
+::-webkit-scrollbar-thumb { background: #e8abbb; border-radius: 99px; }
+::-webkit-scrollbar-thumb:hover { background: var(--pink); }
+
+button, input, select, textarea {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: 0;
+  background: none;
+}
+
+/* Layout Container */
+.app {
+  max-width: 1260px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: grid;
+  grid-template-columns: 275px 1fr;
+  background: rgba(255, 251, 249, 0.86);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  box-shadow: 0 0 70px rgba(111, 56, 64, 0.12);
+  border-left: 1px solid rgba(255, 255, 255, 0.65);
+  border-right: 1px solid rgba(255, 255, 255, 0.65);
+  position: relative;
+}
+
+/* Sidebar */
+.sidebar {
+  background: linear-gradient(180deg, #fff7f3 0%, #fff2ec 100%);
+  border-right: 1px solid var(--line-light);
+  padding: 28px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+/* Brand Row with Official Logo */
+.brandrow {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.brand-logo-img {
+  width: 54px;
+  height: 54px;
+  border-radius: 17px;
+  object-fit: cover;
+  background: white;
+  padding: 3px;
+  box-shadow: 0 6px 18px rgba(228, 98, 133, 0.22);
+  border: 2px solid #ffffff;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.brandrow:hover .brand-logo-img {
+  transform: scale(1.05);
+}
+
+.brand-text-wrap {
+  display: flex;
+  flex-direction: column;
+}
+
+.brand-title {
+  font-size: 24px;
+  font-weight: 900;
+  line-height: 0.95;
+  letter-spacing: -0.6px;
+  color: #3b282e;
+}
+
+.brand-title .pink-part {
+  color: var(--pink);
+}
+
+.brand-title .mint-part {
+  color: var(--mint);
+}
+
+.brand-subtitle {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  margin-top: 5px;
+  text-transform: uppercase;
+}
+
+.nav {
+  display: grid;
+  gap: 6px;
+}
+
+.nav button {
+  text-align: left;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  color: var(--ink-secondary);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13.5px;
+  font-weight: 600;
+  transition: var(--transition);
+  position: relative;
+}
+
+.nav button .ico {
+  width: 22px;
+  text-align: center;
+  font-size: 18px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition);
+}
+
+.nav button:hover {
+  background: #fae4ea;
+  color: var(--pink-deep);
+  transform: translateX(3px);
+}
+
+.nav button.active {
+  background: linear-gradient(110deg, #f8d7df 0%, #f4c5cf 100%);
+  color: var(--pink-deep);
+  font-weight: 800;
+  box-shadow: 0 4px 14px rgba(228, 98, 133, 0.16);
+}
+
+.nav button.active::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 9px;
+  bottom: 9px;
+  width: 4px;
+  border-radius: 0 4px 4px 0;
+  background: var(--pink);
+}
+
+.sidebar-tools-badge {
+  background: var(--mint-bg);
+  color: var(--mint-text);
+  font-size: 10px;
+  font-weight: 850;
+  padding: 2px 8px;
+  border-radius: 99px;
+  margin-left: auto;
+}
+
+.sidebar-note {
+  margin-top: auto;
+  background: linear-gradient(135deg, #fbe7ea 0%, #fceef1 100%);
+  padding: 16px;
+  border-radius: var(--radius-md);
+  font-size: 12px;
+  line-height: 1.55;
+  color: #7d4d5a;
+  border: 1px solid #f6cfd7;
+  position: relative;
+}
+
+.sidebar-note b {
+  color: var(--pink-deep);
+  display: block;
+  margin-bottom: 3px;
+  font-size: 13px;
+}
+
+/* Main Area */
+main {
+  padding: 30px 40px 60px;
+  min-width: 0;
+}
+
+.topline {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 26px;
+  gap: 15px;
+}
+
+.eyebrow {
+  font-size: 11.5px;
+  text-transform: uppercase;
+  letter-spacing: 1.8px;
+  color: #a45a6f;
+  font-weight: 800;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.page-title {
+  font-size: 28px;
+  font-weight: 900;
+  letter-spacing: -0.9px;
+  margin: 4px 0 0;
+  color: #2e1f24;
+}
+
+.topline-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.today-chip {
+  background: #fff;
+  border: 1px solid var(--line);
+  padding: 8px 14px;
+  border-radius: var(--radius-full);
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--ink-secondary);
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.avatar-btn {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f8d5de 0%, #f2aebf 100%);
+  display: grid;
+  place-items: center;
+  font-size: 24px;
+  border: 2.5px solid white;
+  box-shadow: 0 4px 15px rgba(173, 104, 116, 0.22);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.avatar-btn:hover {
+  transform: scale(1.06);
+}
+
+/* Screen Transitions */
+.screen {
+  display: none;
+  animation: fadeIn 0.3s ease-out forwards;
+}
+
+.screen.active {
+  display: block;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* Greeting */
+.welcome-banner {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 20px;
+}
+
+.welcome {
+  font-size: 16px;
+  color: var(--ink-secondary);
+}
+
+.welcome strong {
+  color: var(--pink-deep);
+  font-weight: 800;
+}
+
+/* Hero Section */
+.hero {
+  background: linear-gradient(125deg, #f29bb1 0%, #e46285 45%, #ce4970 100%);
+  color: #fff;
+  border-radius: var(--radius-lg);
+  padding: 30px 32px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 25px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 0 14px 34px rgba(228, 98, 133, 0.28);
+}
+
+.hero::after {
+  content: "♡";
+  position: absolute;
+  right: 140px;
+  top: -45px;
+  font-size: 190px;
+  color: rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+  font-weight: 300;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 530px;
+}
+
+.hero h2 {
+  font-size: 26px;
+  font-weight: 900;
+  letter-spacing: -0.6px;
+  margin: 10px 0 10px;
+  line-height: 1.25;
+}
+
+.hero p {
+  margin: 0;
+  line-height: 1.6;
+  color: #fff4f6;
+  font-size: 14px;
+}
+
+.hero-stats-wrap {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  z-index: 1;
+}
+
+.week-box {
+  background: rgba(255, 255, 255, 0.22);
+  backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255, 255, 255, 0.55);
+  border-radius: 20px;
+  padding: 18px 22px;
+  min-width: 135px;
+  text-align: center;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+}
+
+.week-box strong {
+  display: block;
+  font-size: 38px;
+  font-weight: 900;
+  line-height: 1;
+}
+
+.week-box span {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  opacity: 0.95;
+  display: block;
+  margin-top: 5px;
+}
+
+.trimester-tag {
+  margin-top: 8px;
+  font-size: 11px;
+  font-weight: 800;
+  background: #ffffff;
+  color: var(--pink-deep);
+  padding: 3px 10px;
+  border-radius: 99px;
+  display: inline-block;
+}
+
+/* Baby Size Card in Hero */
+.baby-size-strip {
+  margin-top: 18px;
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  border-radius: var(--radius-sm);
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 13px;
+  backdrop-filter: blur(5px);
+}
+
+.baby-size-icon {
+  font-size: 26px;
+}
+
+/* Quick Stat Row */
+.statrow {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
+  margin-top: 22px;
+}
+
+.stat-card {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  padding: 18px 20px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: var(--transition);
+  position: relative;
+  overflow: hidden;
+}
+
+.stat-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  border-color: #e5b2be;
+}
+
+.stat-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: linear-gradient(90deg, var(--pink2), var(--pink));
+  opacity: 0.8;
+}
+
+.stat-card .stat-label {
+  font-size: 11.5px;
+  font-weight: 750;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.stat-card strong {
+  display: block;
+  font-size: 24px;
+  font-weight: 900;
+  margin: 6px 0 3px;
+  color: #38242a;
+}
+
+.stat-card .stat-sub {
+  font-size: 12px;
+  color: var(--ink-secondary);
+}
+
+.progress-track {
+  height: 6px;
+  background: #f1dadf;
+  border-radius: 99px;
+  margin-top: 8px;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #ea85a0, var(--pink));
+  border-radius: 99px;
+  transition: width 0.4s ease;
+}
+
+/* Grid Dashboard */
+.grid {
+  display: grid;
+  grid-template-columns: 1.25fr 0.85fr;
+  gap: 22px;
+  margin-top: 24px;
+}
+
+/* Card Component */
+.card {
+  background: var(--card-bg);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 24px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.cardhead {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 18px;
+}
+
+.cardhead-title {
+  display: flex;
+  flex-direction: column;
+}
+
+.card h3 {
+  font-size: 17px;
+  font-weight: 800;
+  color: #312126;
+  letter-spacing: -0.3px;
+}
+
+.card .sub {
+  color: var(--muted);
+  font-size: 12.5px;
+  margin-top: 2px;
+}
+
+.textbtn {
+  color: var(--pink);
+  font-weight: 800;
+  font-size: 12.5px;
+  padding: 6px 10px;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.textbtn:hover {
+  background: #fbe6eb;
+  color: var(--pink-dark);
+}
+
+/* Task Checklists */
+.task-list {
+  display: grid;
+  gap: 6px;
+}
+
+.task {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 12px 14px;
+  border-radius: var(--radius-sm);
+  background: #fffafa;
+  border: 1px solid var(--line-light);
+  font-size: 13.5px;
+  font-weight: 600;
+  color: var(--ink);
+  transition: var(--transition);
+  cursor: pointer;
+  user-select: none;
+}
+
+.task:hover {
+  background: #fff4f6;
+  border-color: #f1cfd7;
+}
+
+.task input {
+  accent-color: var(--pink);
+  width: 19px;
+  height: 19px;
+  cursor: pointer;
+  border-radius: 6px;
+}
+
+.task.done {
+  background: #f9f5f5;
+  border-color: #eee0e3;
+}
+
+.task.done span {
+  text-decoration: line-through;
+  color: #a49397;
+  font-weight: 500;
+}
+
+.task-tag {
+  margin-left: auto;
+  font-size: 11px;
+  font-weight: 750;
+  padding: 3px 9px;
+  border-radius: 99px;
+  background: #f7dce2;
+  color: var(--pink-deep);
+}
+
+/* Water Intake Widget */
+.water-card {
+  margin-top: 18px;
+  background: linear-gradient(135deg, #eaf5f8 0%, #dff0f5 100%);
+  border: 1px solid #c7e5ed;
+  border-radius: var(--radius-md);
+  padding: 18px;
+}
+
+.water-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.water-header strong {
+  color: var(--blue-text);
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.water-cups {
+  display: flex;
+  justify-content: space-between;
+  gap: 6px;
+}
+
+.cup-btn {
+  flex: 1;
+  background: #ffffff;
+  border: 1.5px solid #bddce6;
+  border-radius: 10px;
+  padding: 8px 4px;
+  text-align: center;
+  font-size: 18px;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.cup-btn:hover {
+  transform: translateY(-3px);
+  border-color: #72b9cd;
+}
+
+.cup-btn.filled {
+  background: #4daed1;
+  border-color: #379dc1;
+  box-shadow: 0 4px 10px rgba(77, 174, 209, 0.3);
+}
+
+/* Reminder highlight card */
+.reminder {
+  background: linear-gradient(135deg, #fae2e7 0%, #f7d5dd 100%);
+  border: 1px solid #f2c1cd;
+  border-radius: var(--radius-md);
+  padding: 18px 20px;
+  margin-top: 10px;
+  box-shadow: var(--shadow-sm);
+  position: relative;
+}
+
+.reminder .time {
+  font-size: 20px;
+  font-weight: 900;
+  margin: 8px 0 4px;
+  color: #3b1d26;
+}
+
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  background: #f5d0d9;
+  color: #8b3350;
+  font-size: 11.5px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
+}
+
+.pill.mint { background: var(--mint-bg); color: var(--mint-text); }
+.pill.blue { background: #dceef4; color: #226073; }
+.pill.gold { background: #faeed3; color: #875c1a; }
+
+/* Baby Kick Tracker Quick Card */
+.kick-counter-box {
+  margin-top: 16px;
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-md);
+  padding: 16px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.kick-info strong {
+  display: block;
+  font-size: 15px;
+  color: var(--ink);
+}
+
+.kick-info span {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.kick-btn-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #f7b4c4 0%, var(--pink) 100%);
+  color: white;
+  font-weight: 900;
+  font-size: 16px;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 6px 16px rgba(228, 98, 133, 0.35);
+  transition: var(--transition);
+}
+
+.kick-btn-circle:hover {
+  transform: scale(1.08);
+}
+
+.kick-btn-circle:active {
+  transform: scale(0.95);
+}
+
+/* Buttons */
+.btn {
+  background: var(--pink);
+  color: white;
+  padding: 12px 22px;
+  border-radius: var(--radius-sm);
+  font-weight: 800;
+  font-size: 13.5px;
+  box-shadow: 0 6px 16px rgba(228, 98, 133, 0.3);
+  transition: var(--transition);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.btn:hover {
+  background: var(--pink-dark);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(228, 98, 133, 0.38);
+}
+
+.btn:active {
+  transform: translateY(0);
+}
+
+.btn.secondary {
+  background: #f7d8df;
+  color: #7d2a45;
+  box-shadow: none;
+}
+
+.btn.secondary:hover {
+  background: #f2c6d0;
+  color: #601b31;
+}
+
+.btn.full {
+  width: 100%;
+}
+
+.btn.sm {
+  padding: 8px 14px;
+  font-size: 12px;
+  border-radius: 10px;
+}
+
+.btn.outline {
+  background: transparent;
+  border: 1.5px solid var(--pink);
+  color: var(--pink);
+  box-shadow: none;
+}
+
+.btn.outline:hover {
+  background: #fae6eb;
+}
+
+/* Section Title */
+.sectiontitle {
+  margin: 32px 0 16px;
+  font-size: 20px;
+  font-weight: 850;
+  letter-spacing: -0.4px;
+  color: #2b1d22;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* 3 & 4 Column Card Grids */
+.cards3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+}
+
+/* REALISTIC FOOD CARDS */
+.food {
+  overflow: hidden;
+  padding: 0;
+  transition: var(--transition);
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--line);
+}
+
+.food:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+  border-color: #e5b0be;
+}
+
+.foodimg-wrap {
+  width: 100%;
+  height: 185px;
+  overflow: hidden;
+  position: relative;
+  background: #faedf0;
+}
+
+.foodimg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.45s ease;
+  display: block;
+}
+
+.food:hover .foodimg {
+  transform: scale(1.08);
+}
+
+.foodimg-tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(8px);
+  color: var(--pink-deep);
+  font-size: 11px;
+  font-weight: 850;
+  padding: 4px 10px;
+  border-radius: 99px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.food .foodtext {
+  padding: 18px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.food h3 {
+  margin: 0 0 6px;
+  font-size: 16.5px;
+  font-weight: 800;
+  color: #2d1f23;
+  line-height: 1.3;
+}
+
+.food p {
+  font-size: 12.5px;
+  line-height: 1.5;
+  color: var(--muted);
+  margin: 0 0 14px;
+}
+
+.food .badge-row {
+  margin-top: auto;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+/* List Items / Cards */
+.listcards {
+  display: grid;
+  gap: 14px;
+}
+
+.listitem {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  background: #fffafa;
+  border: 1px solid var(--line-light);
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  transition: var(--transition);
+}
+
+.listitem:hover {
+  background: #ffffff;
+  border-color: #e8bdc7;
+  box-shadow: var(--shadow-sm);
+  transform: translateX(3px);
+}
+
+.listicon {
+  width: 48px;
+  height: 48px;
+  border-radius: 14px;
+  background: linear-gradient(135deg, #fbe4e9 0%, #f5cbd4 100%);
+  display: grid;
+  place-items: center;
+  font-size: 23px;
+  flex-shrink: 0;
+  box-shadow: 0 4px 10px rgba(228, 98, 133, 0.12);
+}
+
+.listitem h3 {
+  margin: 0 0 4px;
+  font-size: 15px;
+  font-weight: 800;
+  color: #2d1e23;
+}
+
+.listitem p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 12.5px;
+  line-height: 1.45;
+}
+
+.listitem .right {
+  margin-left: auto;
+  text-align: right;
+  white-space: nowrap;
+  font-size: 12.5px;
+  color: #a54e69;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.action-icon-btn {
+  background: transparent;
+  color: #aa7a86;
+  font-size: 16px;
+  padding: 6px;
+  border-radius: 8px;
+  transition: var(--transition);
+}
+
+.action-icon-btn:hover {
+  background: #f7d9e1;
+  color: var(--pink-deep);
+}
+
+/* Tabs Filter */
+.tab-row {
+  display: flex;
+  gap: 8px;
+  margin-bottom: 20px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.tab-btn {
+  background: #fff;
+  border: 1px solid var(--line);
+  color: var(--ink-secondary);
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: var(--transition);
+}
+
+.tab-btn:hover {
+  background: #fbebee;
+  border-color: #e5b2be;
+  color: var(--pink);
+}
+
+.tab-btn.active {
+  background: var(--pink);
+  border-color: var(--pink);
+  color: white;
+  box-shadow: 0 4px 12px rgba(228, 98, 133, 0.28);
+}
+
+/* Pregnancy Passport Card */
+.passport-card {
+  background: linear-gradient(135deg, #fbe8ec 0%, #f6cbd4 50%, #f9dde4 100%);
+  border: 2px solid #ffffff;
+  border-radius: var(--radius-lg);
+  padding: 26px 28px;
+  box-shadow: 0 12px 36px rgba(228, 98, 133, 0.2);
+  margin-bottom: 25px;
+  position: relative;
+  overflow: hidden;
+}
+
+.passport-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid rgba(228, 98, 133, 0.25);
+  padding-bottom: 14px;
+  margin-bottom: 18px;
+}
+
+.passport-badge {
+  background: white;
+  color: var(--pink-deep);
+  font-size: 11px;
+  font-weight: 850;
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  padding: 4px 12px;
+  border-radius: 99px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+}
+
+.passport-body {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.passport-avatar {
+  width: 74px;
+  height: 74px;
+  border-radius: 50%;
+  background: #ffffff;
+  display: grid;
+  place-items: center;
+  font-size: 38px;
+  border: 3px solid white;
+  box-shadow: 0 6px 16px rgba(228, 98, 133, 0.25);
+  flex-shrink: 0;
+}
+
+.passport-details h2 {
+  font-size: 22px;
+  font-weight: 900;
+  color: #3b1e26;
+  margin-bottom: 4px;
+}
+
+.passport-details p {
+  color: #69444f;
+  font-size: 13.5px;
+  font-weight: 600;
+}
+
+.passport-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px dashed rgba(228, 98, 133, 0.3);
+}
+
+.passport-field span {
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  color: #8c5564;
+  font-weight: 750;
+  display: block;
+}
+
+.passport-field strong {
+  font-size: 15px;
+  color: #311c22;
+  font-weight: 800;
+}
+
+/* Forms & Fields */
+.formgrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px 20px;
+}
+
+.field {
+  display: grid;
+  gap: 7px;
+  margin-bottom: 16px;
+}
+
+.field label {
+  font-size: 12.5px;
+  font-weight: 800;
+  color: #553e45;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.field input, .field select, .field textarea {
+  width: 100%;
+  border: 1.5px solid #e7c2c9;
+  background: #fffdfc;
+  border-radius: var(--radius-sm);
+  padding: 12px 14px;
+  color: var(--ink);
+  font-size: 13.5px;
+  transition: var(--transition);
+  outline: none;
+}
+
+.field input:focus, .field select:focus, .field textarea:focus {
+  border-color: var(--pink);
+  background: #ffffff;
+  box-shadow: 0 0 0 4px rgba(228, 98, 133, 0.16);
+}
+
+/* Toggles & Settings */
+.toggle {
+  appearance: none;
+  -webkit-appearance: none;
+  width: 44px;
+  height: 25px;
+  border-radius: 99px;
+  background: #e2c9ce;
+  position: relative;
+  flex-shrink: 0;
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.toggle:checked {
+  background: var(--pink);
+}
+
+.toggle::before {
+  content: "";
+  position: absolute;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  left: 3px;
+  top: 3px;
+  background: white;
+  transition: 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.toggle:checked::before {
+  left: 22px;
+}
+
+.settingrow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 18px;
+  padding: 16px 0;
+  border-bottom: 1px solid var(--line-light);
+}
+
+.settingrow:last-child {
+  border: 0;
+}
+
+.settingrow strong {
+  font-size: 14px;
+  font-weight: 800;
+  color: #38252b;
+}
+
+.settingrow p {
+  font-size: 12.5px;
+  color: var(--muted);
+  margin: 3px 0 0;
+}
+
+/* Notices & Alerts */
+.foodnotice {
+  background: linear-gradient(135deg, #e4f4f0 0%, #d8eee9 100%);
+  border: 1px solid #bde0d7;
+  border-radius: var(--radius-md);
+  padding: 16px 18px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #215d53;
+  margin-top: 18px;
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+}
+
+.foodnotice .icon {
+  font-size: 20px;
+  flex-shrink: 0;
+}
+
+/* Modal Popup System */
+.modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 16, 21, 0.65);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  display: none;
+  place-items: center;
+  z-index: 100;
+  padding: 20px;
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.modal-overlay.open {
+  display: grid;
+  opacity: 1;
+}
+
+.modal-card {
+  background: #fffafa;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  padding: 28px;
+  width: 100%;
+  max-width: 540px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  position: relative;
+  transform: translateY(15px);
+  transition: transform 0.25s ease;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-overlay.open .modal-card {
+  transform: translateY(0);
+}
+
+.modal-close {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: #f7dbe1;
+  color: var(--pink-deep);
+  font-weight: 800;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  transition: var(--transition);
+  z-index: 2;
+}
+
+.modal-close:hover {
+  background: var(--pink);
+  color: white;
+}
+
+.modal-title {
+  font-size: 21px;
+  font-weight: 900;
+  color: #351f25;
+  margin-bottom: 6px;
+}
+
+.modal-food-banner {
+  width: calc(100% + 56px);
+  margin: -28px -28px 20px -28px;
+  height: 220px;
+  overflow: hidden;
+  position: relative;
+  background: #faedf0;
+}
+
+.modal-food-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Toast Notification */
+.toast-container {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  z-index: 200;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  pointer-events: none;
+}
+
+.toast {
+  background: #361f26;
+  color: white;
+  padding: 14px 20px;
+  border-radius: var(--radius-md);
+  font-size: 13.5px;
+  font-weight: 700;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.25);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  animation: slideToast 0.3s cubic-bezier(0.2, 0.8, 0.2, 1) forwards;
+  pointer-events: auto;
+}
+
+@keyframes slideToast {
+  from { transform: translateX(50px); opacity: 0; }
+  to { transform: translateX(0); opacity: 1; }
+}
+
+/* Auth Screen */
+.auth {
+  max-width: 440px;
+  margin: 6vh auto;
+  background: #fffafa;
+  border: 1px solid var(--line);
+  border-radius: 28px;
+  padding: 38px 34px;
+  box-shadow: 0 20px 50px rgba(111, 56, 64, 0.16);
+}
+
+.authbrand {
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.auth-logo-img {
+  width: 86px;
+  height: 86px;
+  border-radius: 24px;
+  object-fit: cover;
+  background: white;
+  padding: 5px;
+  margin: 0 auto 14px;
+  box-shadow: 0 10px 25px rgba(228, 98, 133, 0.22);
+}
+
+.authlinks {
+  text-align: center;
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 18px;
+}
+
+.authlinks a {
+  color: var(--pink);
+  font-weight: 800;
+  cursor: pointer;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+/* Mobile Bottom Navigation Bar */
+.mobilebar {
+  display: none;
+}
+
+/* FAQ Accordion */
+.faq-item {
+  border: 1px solid var(--line-light);
+  border-radius: var(--radius-md);
+  background: #fff;
+  margin-bottom: 12px;
+  overflow: hidden;
+  transition: var(--transition);
+}
+
+.faq-header {
+  padding: 16px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 800;
+  color: #311c22;
+}
+
+.faq-header:hover {
+  background: #fff8f9;
+}
+
+.faq-body {
+  padding: 0 20px 18px;
+  font-size: 13px;
+  line-height: 1.6;
+  color: var(--ink-secondary);
+  display: none;
+}
+
+.faq-item.open .faq-body {
+  display: block;
+}
+
+.faq-item.open .faq-chevron {
+  transform: rotate(180deg);
+}
+
+.faq-chevron {
+  transition: transform 0.2s ease;
+  font-size: 12px;
+}
+
+/* Responsive Media Queries */
+@media (max-width: 980px) {
+  .app {
+    grid-template-columns: 220px 1fr;
+  }
+  main {
+    padding: 24px 28px 50px;
+  }
+  .statrow {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .grid {
+    grid-template-columns: 1fr;
+  }
+  .cards3 {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 768px) {
+  .app {
+    display: block;
+    border: none;
+  }
+  .sidebar {
+    display: none;
+  }
+  main {
+    padding: 20px 18px 95px;
+  }
+  .topline {
+    margin-bottom: 18px;
+  }
+  .page-title {
+    font-size: 24px;
+  }
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+  }
+  .hero::after {
+    right: 20px;
+    top: -20px;
+    font-size: 120px;
+  }
+  .hero-stats-wrap {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .formgrid {
+    grid-template-columns: 1fr;
+  }
+  .cards3 {
+    grid-template-columns: 1fr;
+  }
+  .passport-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+  .passport-body {
+    flex-direction: column;
+    text-align: center;
+  }
+  .mobilebar {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #ffffff;
+    border-top: 1px solid #ebd0d6;
+    display: flex;
+    justify-content: space-around;
+    padding: 8px 6px calc(8px + env(safe-area-inset-bottom));
+    z-index: 50;
+    box-shadow: 0 -8px 25px rgba(111, 56, 64, 0.08);
+  }
+  .mobilebar button {
+    background: transparent;
+    color: #7b6269;
+    font-size: 11px;
+    font-weight: 750;
+    padding: 6px 10px;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    transition: var(--transition);
+  }
+  .mobilebar button .m-ico {
+    font-size: 20px;
+  }
+  .mobilebar button.active {
+    color: var(--pink);
+    font-weight: 850;
+  }
+}
+
+/* Print Styles for Buku KIA / Ringkasan */
+@media print {
+  body { background: white; }
+  .sidebar, .mobilebar, .topline-actions, .textbtn, .btn, .cup-btn { display: none !important; }
+  .app { box-shadow: none; border: none; display: block; }
+  main { padding: 0; }
+  .card, .passport-card { box-shadow: none; border: 1px solid #ccc; break-inside: avoid; }
+}
+</style>
+</head>
+<body>
+
+<div class="app">
+  <!-- Desktop Sidebar -->
+  <aside class="sidebar">
+    <div class="brandrow" onclick="go('home')" title="MOMP CARE">
+      <img src="assets/logo.jpg" alt="Logo MOMP CARE" class="brand-logo-img" onerror="this.src='https://via.placeholder.com/54?text=MC'">
+      <div class="brand-text-wrap">
+        <div class="brand-title">
+          <span class="pink-part">momp</span> <span class="mint-part">care</span>
+        </div>
+        <span class="brand-subtitle">CARE FOR TWO</span>
+      </div>
+    </div>
+
+    <nav class="nav" id="sidenav">
+      <button class="active" data-page="home">
+        <span class="ico">⌂</span>Beranda
+      </button>
+      <button data-page="reminders">
+        <span class="ico">⏰</span>Pengingat Saya
+      </button>
+      <button data-page="nutrition">
+        <span class="ico">🥗</span>Gizi Lokal Madura
+      </button>
+      <button data-page="schedule">
+        <span class="ico">🏥</span>Jadwal & ANC
+      </button>
+      <button data-page="tools">
+        <span class="ico">🧮</span>Kalkulator & Alat
+        <span class="sidebar-tools-badge">Fitur Baru</span>
+      </button>
+      <button data-page="profile">
+        <span class="ico">🪪</span>Profil & Kartu KIA
+      </button>
+      <button data-page="settings">
+        <span class="ico">⚙</span>Pengaturan
+      </button>
+      <button data-page="help">
+        <span class="ico">♡</span>Bantuan & Faskes
+      </button>
+      <button data-page="about">
+        <span class="ico">ⓘ</span>Tentang Aplikasi
+      </button>
+    </nav>
+
+    <div class="sidebar-note">
+      🌸 <b>Setiap langkah berarti.</b>
+      Temani perjalanan kehamilan dengan kebiasaan sehat dan kearifan pangan lokal Madura untuk generasi bebas stunting.
+    </div>
+  </aside>
+
+  <!-- Main Content Body -->
+  <main>
+    <!-- Top Bar -->
+    <header class="topline">
+      <div>
+        <div class="eyebrow">
+          <span>🌸</span> MOMP CARE · Ibu dan Buah Hati
+        </div>
+        <h1 class="page-title" id="pagetitle">Beranda</h1>
+      </div>
+      <div class="topline-actions">
+        <div class="today-chip" id="currentDateBadge">
+          <span>📅</span> <span id="currentDateStr">Kamis, 15 Okt 2026</span>
+        </div>
+        <button class="avatar-btn" onclick="go('profile')" title="Buka Profil Bunda" id="topAvatar">
+          👩🏻
+        </button>
+      </div>
+    </header>
+
+    <!-- ================= SCREEN 1: BERANDA (HOME) ================= -->
+    <section class="screen active" id="home">
+      <div class="welcome-banner">
+        <p class="welcome">
+          <span id="timeGreeting">Selamat Pagi</span>, <strong id="greetingName">Bunda Fitri</strong>! Senang menemani perjalanan kehamilanmu hari ini. 💗
+        </p>
+      </div>
+
+      <!-- Hero Card with Week and Baby Size -->
+      <div class="hero">
+        <div class="hero-content">
+          <span class="pill" style="background:rgba(255,255,255,0.25); color:white; border:1px solid rgba(255,255,255,0.4)">
+            ✨ Fase Kehamilan Bahagia
+          </span>
+          <h2>Kehamilan sehat dimulai dari kebiasaan kecil setiap hari.</h2>
+          <p>
+            Pastikan Bunda minum <b>Tablet Tambah Darah (TTD)</b> malam ini dengan air putih atau air jeruk agar tidak anemia ya!
+          </p>
+
+          <div class="baby-size-strip" id="babySizeBanner">
+            <span class="baby-size-icon" id="babyIcon">🥑</span>
+            <div>
+              <b id="babyTitle">Ukuran Janin: Sebesar Buah Alpukat</b>
+              <div id="babyDesc" style="font-size:12px; opacity:0.95">Panjang ~11.6 cm, berat ~100 gr. Janin kini mulai bisa mendengar suara Bunda!</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero-stats-wrap">
+          <div class="week-box">
+            <strong id="weeknum">16</strong>
+            <span>Minggu Kehamilan</span>
+            <span class="trimester-tag" id="trimesterTag">Trimester 2</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Vital Stats Row -->
+      <div class="statrow">
+        <div class="stat-card">
+          <span class="stat-label">Menuju HPL</span>
+          <strong id="daysleft">24 Minggu</strong>
+          <span class="stat-sub" id="hplDateSub">Perkiraan: 20 Feb 2027</span>
+          <div class="progress-track">
+            <div class="progress-fill" id="hplProgressFill" style="width: 40%"></div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-label">Agenda Harian</span>
+          <strong id="progress">0 / 6</strong>
+          <span class="stat-sub">Selesaikan tugas sehat hari ini</span>
+          <div class="progress-track">
+            <div class="progress-fill" id="taskProgressFill" style="width: 0%"></div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-label">Konsumsi Air</span>
+          <strong id="waterCounterTxt">0 / 8 Gelas</strong>
+          <span class="stat-sub">Target hidrasi 2 liter/hari</span>
+          <div class="progress-track">
+            <div class="progress-fill" id="waterProgressFill" style="width: 0%; background: linear-gradient(90deg, #64bcdb, #339dbd)"></div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <span class="stat-label">Kepatuhan TTD</span>
+          <strong id="ttdStreak">14 Hari</strong>
+          <span class="stat-sub">🔥 Cegah anemia & stunting</span>
+          <div class="progress-track">
+            <div class="progress-fill" style="width: 75%; background: linear-gradient(90deg, #f5a623, var(--pink))"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Main Dashboard Grid -->
+      <div class="grid">
+        <!-- Left: Agenda Tasks & Water Tracker -->
+        <div class="card">
+          <div class="cardhead">
+            <div class="cardhead-title">
+              <h3>Agenda Sehat Hari Ini</h3>
+              <div class="sub">Checklist kebiasaan baik untuk Bunda dan janin</div>
+            </div>
+            <button class="textbtn" onclick="go('reminders')">Atur Pengingat →</button>
+          </div>
+
+          <div class="task-list" id="tasks">
+            <label class="task">
+              <input type="checkbox" data-task="ttd">
+              <span>Konsumsi 1 Tablet Tambah Darah (TTD)</span>
+              <span class="task-tag">Penting</span>
+            </label>
+            <label class="task">
+              <input type="checkbox" data-task="sarapan">
+              <span>Sarapan gizi seimbang (Protein & Sayur)</span>
+              <span class="task-tag">Gizi</span>
+            </label>
+            <label class="task">
+              <input type="checkbox" data-task="makan">
+              <span>Makan siang dengan menu berprotein lokal</span>
+              <span class="task-tag">Gizi</span>
+            </label>
+            <label class="task">
+              <input type="checkbox" data-task="air">
+              <span>Minum air putih minimal 8–10 gelas</span>
+              <span class="task-tag">Hidrasi</span>
+            </label>
+            <label class="task">
+              <input type="checkbox" data-task="aktivitas">
+              <span>Jalan santai / aktivitas fisik ringan 15 menit</span>
+              <span class="task-tag">Aktivitas</span>
+            </label>
+            <label class="task">
+              <input type="checkbox" data-task="tidur">
+              <span>Istirahat tidur siang & malam cukup</span>
+              <span class="task-tag">Pola Tidur</span>
+            </label>
+          </div>
+
+          <!-- Interactive Water Intake -->
+          <div class="water-card">
+            <div class="water-header">
+              <strong>💧 Catat Minum Air Putih Hari Ini</strong>
+              <span class="pill blue" id="waterMl">0 ml / 2000 ml</span>
+            </div>
+            <div class="water-cups" id="waterCupsContainer">
+              <!-- 8 cups populated by JS -->
+            </div>
+          </div>
+        </div>
+
+        <!-- Right: Next Reminders & Baby Kick Counter -->
+        <div style="display:flex; flex-direction:column; gap:18px">
+          <!-- Next Reminder -->
+          <div class="card">
+            <div class="cardhead">
+              <div class="cardhead-title">
+                <h3>Pengingat Berikutnya</h3>
+                <div class="sub">Jadwal rutinitas terdekat</div>
+              </div>
+              <span>⏰</span>
+            </div>
+
+            <div class="reminder">
+              <span class="pill" id="nextReminderTime">19.00 Malam</span>
+              <div class="time" id="nextReminderTitle">Tablet Tambah Darah</div>
+              <div class="sub" id="nextReminderDesc">Minum setelah makan malam dengan air jeruk (hindari teh/kopi).</div>
+            </div>
+
+            <div style="margin-top:14px; display:flex; gap:10px;">
+              <button class="btn secondary full" onclick="go('schedule')">
+                🏥 Jadwal ANC
+              </button>
+              <button class="btn full" onclick="quickCheckTTD()">
+                ✓ Sudah Minum
+              </button>
+            </div>
+          </div>
+
+          <!-- Quick Baby Kick Tracker Widget -->
+          <div class="card">
+            <div class="cardhead">
+              <div class="cardhead-title">
+                <h3>Pantau Gerakan Janin</h3>
+                <div class="sub">Metode Cardiff (Hitung hingga 10 tendangan)</div>
+              </div>
+              <span class="pill mint">Aktif</span>
+            </div>
+
+            <div class="kick-counter-box">
+              <div class="kick-info">
+                <strong id="quickKickCount">0 Tendangan</strong>
+                <span id="quickKickStatus">Sentuh tombol tiap si kecil bergerak</span>
+              </div>
+              <button class="kick-btn-circle" onclick="addQuickKick()" title="Catat Tendangan">
+                👣
+              </button>
+            </div>
+            
+            <div style="margin-top:12px; display:flex; justify-content:space-between; align-items:center;">
+              <span style="font-size:12px; color:var(--muted)">Target: 10 gerakan dalam 2 jam</span>
+              <button class="textbtn" onclick="go('tools')">Buka Stopwatch →</button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Rekomendasi Gizi Lokal Madura Highlight dengan Foto Realistis -->
+      <div class="sectiontitle">
+        <div>
+          <h3>Inspirasi Gizi Lokal Madura</h3>
+          <span style="font-size:13px; font-weight:500; color:var(--muted)">Bahan makanan kaya zat besi & protein untuk pencegahan stunting</span>
+        </div>
+        <button class="textbtn" onclick="go('nutrition')">Lihat Semua Menu →</button>
+      </div>
+
+      <div class="cards3">
+        <!-- Realistic Food 1: Lorjuk -->
+        <div class="card food" onclick="openFoodDetail('lorjuk')">
+          <div class="foodimg-wrap">
+            <img src="assets/lorjuk.jpg" alt="Lorjuk Madura" class="foodimg" loading="lazy">
+            <div class="foodimg-tag">🦪 Khas Madura</div>
+          </div>
+          <div class="foodtext">
+            <h3>Lorjuk Madura</h3>
+            <p>Kerang bambu khas pesisir Madura. Kaya zat besi, zinc, dan protein tinggi pembentuk sel otak janin.</p>
+            <div class="badge-row">
+              <span class="pill">Protein Tinggi</span>
+              <span class="pill mint">Cegah Anemia</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Realistic Food 2: Nasi Jagung -->
+        <div class="card food" onclick="openFoodDetail('jagung')">
+          <div class="foodimg-wrap">
+            <img src="assets/nasi_jagung.jpg" alt="Nasi Jagung Madura" class="foodimg" loading="lazy">
+            <div class="foodimg-tag">🌽 Karbo Sehat</div>
+          </div>
+          <div class="foodtext">
+            <h3>Nasi Jagung Madura</h3>
+            <p>Karbohidrat kompleks kaya serat pangan alami untuk mengontrol gula darah dan melancarkan pencernaan.</p>
+            <div class="badge-row">
+              <span class="pill">Serat Alami</span>
+              <span class="pill blue">Bebas Gluten</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Realistic Food 3: Sayur Kelor -->
+        <div class="card food" onclick="openFoodDetail('kelor')">
+          <div class="foodimg-wrap">
+            <img src="assets/sayur_kelor.jpg" alt="Sayur Kelor Madura" class="foodimg" loading="lazy">
+            <div class="foodimg-tag">🌿 Superfood</div>
+          </div>
+          <div class="foodtext">
+            <h3>Sayur Daun Kelor (Maronggheh)</h3>
+            <p>Superfood tradisi Madura dengan 3x zat besi bayam dan kalsium tinggi untuk pembentukan tulang janin.</p>
+            <div class="badge-row">
+              <span class="pill">Kalsium & Folat</span>
+              <span class="pill gold">Superfood</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SCREEN 2: PENGINGAT SAYA ================= -->
+    <section class="screen" id="reminders">
+      <div class="card">
+        <div class="cardhead">
+          <div class="cardhead-title">
+            <h3>Pengingat Rutinitas Bunda</h3>
+            <div class="sub">Kelola jadwal minum vitamin, pola makan, dan waktu istirahat agar tetap teratur.</div>
+          </div>
+          <button class="btn" onclick="openAddReminderModal()">+ Tambah Pengingat</button>
+        </div>
+
+        <!-- Filter Tab -->
+        <div class="tab-row" id="reminderTabs">
+          <button class="tab-btn active" onclick="filterReminders('all', this)">Semua</button>
+          <button class="tab-btn" onclick="filterReminders('ttd', this)">💊 Obat & TTD</button>
+          <button class="tab-btn" onclick="filterReminders('gizi', this)">🥗 Pola Makan</button>
+          <button class="tab-btn" onclick="filterReminders('anc', this)">🏥 Kontrol ANC</button>
+          <button class="tab-btn" onclick="filterReminders('lifestyle', this)">💧 Hidup Sehat</button>
+        </div>
+
+        <div class="listcards" id="reminderlist">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SCREEN 3: GIZI LOKAL MADURA (FOTO REALISTIS LENGKAP) ================= -->
+    <section class="screen" id="nutrition">
+      <div class="card">
+        <div class="cardhead">
+          <div class="cardhead-title">
+            <h3>Katalog Gizi Lokal Khas Madura</h3>
+            <div class="sub">Pilihan makanan bergizi tinggi berbasis kearifan lokal Madura yang aman dan sangat dianjurkan untuk ibu hamil.</div>
+          </div>
+          <span class="pill gold">✨ Kearifan Pesisir</span>
+        </div>
+
+        <!-- Filter Tabs for Nutrition -->
+        <div class="tab-row" id="nutritionTabs">
+          <button class="tab-btn active" onclick="filterFoods('all', this)">Semua Menu</button>
+          <button class="tab-btn" onclick="filterFoods('protein', this)">Kaya Protein & Besi</button>
+          <button class="tab-btn" onclick="filterFoods('superfood', this)">Sayuran Super</button>
+          <button class="tab-btn" onclick="filterFoods('karbo', this)">Karbohidrat Sehat</button>
+        </div>
+
+        <div class="cards3" id="foodContainer">
+          <!-- Populated dynamically with realistic images by JS -->
+        </div>
+
+        <div class="foodnotice">
+          <span class="icon">💡</span>
+          <div>
+            <b>Panduan Khusus Keamanan Pangan Bumil:</b> Pastikan kerang (seperti lorjuk) dan ikan dimasak hingga matang sempurna (tidak setengah matang). Untuk masakan bersantan seperti Topak Ladeh atau Kaldu Kokot, buat dengan santan encer dan pisahkan kelebihan lemak sumsum demi kenyamanan lambung Bunda.
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SCREEN 4: JADWAL PEMERIKSAAN & ANC ================= -->
+    <section class="screen" id="schedule">
+      <div class="card">
+        <div class="cardhead">
+          <div class="cardhead-title">
+            <h3>Jadwal Pemeriksaan Kehamilan (ANC)</h3>
+            <div class="sub">Standar Kemenkes RI 6x Pemeriksaan Kehamilan untuk keselamatan ibu dan bayi.</div>
+          </div>
+          <button class="btn" onclick="openAddScheduleModal()">+ Tambah Jadwal</button>
+        </div>
+
+        <!-- ANC Progress Timeline -->
+        <div style="background:#fff9f9; border:1px solid var(--line-light); border-radius:var(--radius-md); padding:18px; margin-bottom:20px;">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:10px;">
+            <b style="font-size:13.5px; color:#3b2027">Status Pemeriksaan Minimal Kemenkes (6x ANC)</b>
+            <span class="pill" id="ancProgressBadge">2 dari 6 Selesai</span>
+          </div>
+          <div class="progress-track" style="height:8px">
+            <div class="progress-fill" style="width: 33.3%; background: linear-gradient(90deg, #9ae6b4, #38a169)"></div>
+          </div>
+          <div style="display:flex; justify-content:space-between; margin-top:8px; font-size:11px; color:var(--muted)">
+            <span>K1: TM 1 (USG Dokter)</span>
+            <span>K2–K3: TM 2</span>
+            <span>K4–K6: TM 3 (USG Dokter)</span>
+          </div>
+        </div>
+
+        <div class="listcards" id="schedulelist">
+          <!-- Populated by JS -->
+        </div>
+      </div>
+
+      <!-- Record of Health Checkups -->
+      <div class="card" style="margin-top:22px;">
+        <div class="cardhead">
+          <div class="cardhead-title">
+            <h3>Catatan Medis Terakhir (Buku KIA)</h3>
+            <div class="sub">Hasil penimbangan dan skrining dari Bidan/Dokter faskes</div>
+          </div>
+          <button class="btn sm secondary" onclick="printReport()">🖨 Cetak Ringkasan</button>
+        </div>
+
+        <div class="statrow">
+          <div class="stat-card">
+            <span class="stat-label">Tekanan Darah (TD)</span>
+            <strong>110 / 75</strong>
+            <span class="stat-sub">mmHg · Normal</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Berat Badan Ibu</span>
+            <strong id="bbDisplay">56.5 kg</strong>
+            <span class="stat-sub">+4.5 kg dari pra-hamil</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Kadar Hemoglobin (Hb)</span>
+            <strong>12.1 g/dL</strong>
+            <span class="stat-sub">Normal (Bebas Anemia)</span>
+          </div>
+          <div class="stat-card">
+            <span class="stat-label">Tinggi Fundus (TFU)</span>
+            <strong>16 cm</strong>
+            <span class="stat-sub">Sesuai usia gestasi</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SCREEN 5: KALKULATOR & ALAT KEHAMILAN ================= -->
+    <section class="screen" id="tools">
+      <div class="card">
+        <div class="cardhead">
+          <div class="cardhead-title">
+            <h3>Kalkulator & Alat Pendamping Kehamilan</h3>
+            <div class="sub">Peralatan cerdas untuk memantau Hari Perkiraan Lahir (HPL), berat badan, dan gerakan janin.</div>
+          </div>
+        </div>
+
+        <div class="cards3">
+          <!-- HPL Calculator -->
+          <div class="card" style="background:#fffafa;">
+            <h3 style="display:flex; align-items:center; gap:8px;">
+              <span>📅</span> Hitung HPL (Naegele)
+            </h3>
+            <p class="sub">Tentukan perkiraan tanggal lahir berdasarkan Hari Pertama Haid Terakhir (HPHT).</p>
+
+            <div class="field" style="margin-top:14px;">
+              <label>Tanggal HPHT Bunda</label>
+              <input type="date" id="calcHphtInput">
+            </div>
+            <button class="btn full sm" onclick="calculateHPL()">Hitung Tanggal HPL</button>
+
+            <div id="hplResultBox" style="display:none; margin-top:14px; background:#fae7ec; padding:12px; border-radius:12px; font-size:12.5px;">
+              <div>HPL Perkiraan: <b id="resHplDate">-</b></div>
+              <div>Usia Sekarang: <b id="resWeekGestasi">-</b></div>
+              <button class="btn sm outline full" style="margin-top:8px" onclick="applyHplToProfile()">Terapkan ke Profil</button>
+            </div>
+          </div>
+
+          <!-- Weight Gain Target -->
+          <div class="card" style="background:#fffafa;">
+            <h3 style="display:flex; align-items:center; gap:8px;">
+              <span>⚖️</span> Kenaikan BB Ideal
+            </h3>
+            <p class="sub">Panduan kenaikan berat badan sehat selama kehamilan berdasarkan IMT pra-hamil.</p>
+
+            <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; margin-top:14px;">
+              <div class="field">
+                <label>Tinggi (cm)</label>
+                <input type="number" id="calcHeight" placeholder="158" value="158">
+              </div>
+              <div class="field">
+                <label>BB Awal (kg)</label>
+                <input type="number" id="calcWeight" placeholder="52" value="52">
+              </div>
+            </div>
+            <button class="btn full sm" onclick="calculateBMI()">Hitung Target BB</button>
+
+            <div id="bmiResultBox" style="display:none; margin-top:14px; background:#e8f4f8; padding:12px; border-radius:12px; font-size:12.5px; color:#1e586c">
+              <div>IMT Pra-Hamil: <b id="resBmiValue">-</b></div>
+              <div>Rekomendasi Kenaikan: <b id="resBmiTarget">-</b></div>
+            </div>
+          </div>
+
+          <!-- Kick Counter Stopwatch -->
+          <div class="card" style="background:#fffafa;">
+            <h3 style="display:flex; align-items:center; gap:8px;">
+              <span>👣</span> Penghitung Gerakan (Kick)
+            </h3>
+            <p class="sub">Catat 10 gerakan janin dalam sesi 2 jam untuk memastikan kesejahteraan si kecil.</p>
+
+            <div style="text-align:center; padding:12px 0;">
+              <div style="font-size:36px; font-weight:900; color:var(--pink-deep)" id="sessionKickCount">0</div>
+              <div style="font-size:12px; color:var(--muted)">Target: 10 Tendangan</div>
+              <div style="font-size:13px; font-weight:700; margin-top:4px;" id="kickTimerTxt">00:00:00</div>
+            </div>
+
+            <div style="display:flex; gap:8px;">
+              <button class="btn full sm" onclick="tapKick()">+ Tendang!</button>
+              <button class="btn sm secondary" onclick="resetKickSession()">Reset</button>
+            </div>
+          </div>
+        </div>
+
+        <!-- Warning Signs Screening -->
+        <div style="margin-top:22px; background:#fff2f4; border:1px solid #f2c7ce; border-radius:var(--radius-md); padding:20px;">
+          <h3 style="color:#8a2741; display:flex; align-items:center; gap:8px; margin-bottom:8px;">
+            <span>🚨</span> Skrining Mandiri Tanda Bahaya Kehamilan
+          </h3>
+          <p style="font-size:13px; color:#6e3343; margin-bottom:14px;">
+            Segera periksakan diri ke Puskesmas atau RS terdekat jika Bunda mengalami salah satu dari gejala berikut:
+          </p>
+
+          <div style="display:grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap:10px; font-size:13px; color:#49262f;">
+            <div style="background:#fff; padding:10px 14px; border-radius:10px; border:1px solid #f6d1d8;">⚠️ Pendarahan dari jalan lahir</div>
+            <div style="background:#fff; padding:10px 14px; border-radius:10px; border:1px solid #f6d1d8;">⚠️ Bengkak pada kaki, tangan, dan wajah disertai pusing</div>
+            <div style="background:#fff; padding:10px 14px; border-radius:10px; border:1px solid #f6d1d8;">⚠️ Keluar air ketuban sebelum waktunya</div>
+            <div style="background:#fff; padding:10px 14px; border-radius:10px; border:1px solid #f6d1d8;">⚠️ Gerakan janin berkurang atau tidak terasa</div>
+            <div style="background:#fff; padding:10px 14px; border-radius:10px; border:1px solid #f6d1d8;">⚠️ Demam tinggi atau menggigil</div>
+            <div style="background:#fff; padding:10px 14px; border-radius:10px; border:1px solid #f6d1d8;">⚠️ Mual & muntah hebat terus menerus</div>
+          </div>
+
+          <div style="margin-top:14px; display:flex; gap:10px;">
+            <a href="tel:119" class="btn sm" style="background:#d93859">📞 Hubungi Siaga 119</a>
+            <button class="btn sm secondary" onclick="go('help')">Lihat Daftar RS Rujukan Madura</button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SCREEN 6: PROFIL & KARTU DIGITAL KIA ================= -->
+    <section class="screen" id="profile">
+      <!-- Digital Maternity Passport Card -->
+      <div class="passport-card" id="digitalPassportCard">
+        <div class="passport-head">
+          <div class="brandrow">
+            <img src="assets/logo.jpg" alt="Logo" style="width:36px; height:36px; border-radius:10px; object-fit:cover; background:#fff; padding:2px;">
+            <div style="font-size:14.5px; font-weight:900; color:#3b1e26;">
+              MOMP CARE · KARTU DIGITAL IBU HAMIL
+            </div>
+          </div>
+          <span class="passport-badge">RESMI & PRIBADI</span>
+        </div>
+
+        <div class="passport-body">
+          <div class="passport-avatar" id="passportAvatar">👩🏻</div>
+          <div class="passport-details">
+            <h2 id="cardBundaName">Bunda Fitri</h2>
+            <p>Ibu Hamil · Usia <span id="cardBundaAge">26</span> Tahun · Kabupaten <span id="cardBundaRegion">Bangkalan</span></p>
+          </div>
+          <button class="btn sm secondary" style="margin-left:auto;" onclick="go('data')">
+            ✏️ Ubah Data
+          </button>
+        </div>
+
+        <div class="passport-grid">
+          <div class="passport-field">
+            <span>Usia Kehamilan</span>
+            <strong id="cardWeek">16 Minggu</strong>
+          </div>
+          <div class="passport-field">
+            <span>Perkiraan Lahir (HPL)</span>
+            <strong id="cardHpl">20 Feb 2027</strong>
+          </div>
+          <div class="passport-field">
+            <span>Gravida / Para / Abortus</span>
+            <strong id="cardGpa">G1 P0 A0</strong>
+          </div>
+          <div class="passport-field">
+            <span>Golongan Darah</span>
+            <strong id="cardBlood">O (Rhesus +)</strong>
+          </div>
+          <div class="passport-field">
+            <span>Fasilitas Kesehatan</span>
+            <strong id="cardFaskes">Puskesmas Kamal</strong>
+          </div>
+          <div class="passport-field">
+            <span>Pendamping Bidan</span>
+            <strong id="cardBidan">Bdn. Siti Rohmah, S.Tr.Keb</strong>
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Action Menu -->
+      <div class="listcards">
+        <div class="listitem" onclick="go('data')" style="cursor:pointer">
+          <div class="listicon">📝</div>
+          <div>
+            <h3>Edit Data Lengkap Kehamilan</h3>
+            <p>Perbarui usia kehamilan, tanggal HPHT, riwayat kelahiran, dan alamat faskes.</p>
+          </div>
+          <div class="right">→</div>
+        </div>
+
+        <div class="listitem" onclick="go('schedule')" style="cursor:pointer">
+          <div class="listicon">🩺</div>
+          <div>
+            <h3>Riwayat & Rencana Pemeriksaan ANC</h3>
+            <p>Kelola jadwal USG, imunisasi TT, dan catatan laboratorium.</p>
+          </div>
+          <div class="right">→</div>
+        </div>
+
+        <div class="listitem" onclick="printPassport()" style="cursor:pointer">
+          <div class="listicon">🖨</div>
+          <div>
+            <h3>Cetak / Simpan Kartu Digital KIA</h3>
+            <p>Cetak kartu kehamilan untuk dibawa saat periksa ke faskes atau bidan desa.</p>
+          </div>
+          <div class="right">Unduh PDF</div>
+        </div>
+
+        <div class="listitem" onclick="go('settings')" style="cursor:pointer">
+          <div class="listicon">🔔</div>
+          <div>
+            <h3>Pengaturan Notifikasi & Waktu Alarm</h3>
+            <p>Atur bunyi pengingat TTD, jadwal sarapan, dan hidrasi air minum.</p>
+          </div>
+          <div class="right">→</div>
+        </div>
+      </div>
+
+      <div style="margin-top:24px; display:flex; justify-content:space-between; align-items:center;">
+        <button class="btn secondary" onclick="logout()">Keluar dari Akun</button>
+        <span style="font-size:12px; color:var(--muted)">Versi Aplikasi 2.5 · MOMP CARE Madura</span>
+      </div>
+    </section>
+
+    <!-- ================= SCREEN 7: FORM DATA IBU HAMIL ================= -->
+    <section class="screen" id="data">
+      <div class="card">
+        <div class="cardhead">
+          <div class="cardhead-title">
+            <h3>Data Kehamilan & Personal Bunda</h3>
+            <div class="sub">Isi data akurat agar MOMP CARE dapat memberikan estimasi HPL dan panduan gizi yang tepat.</div>
+          </div>
+          <button class="btn sm secondary" onclick="go('profile')">Kembali ke Profil</button>
+        </div>
+
+        <form id="dataform">
+          <div class="formgrid">
+            <div class="field">
+              <label>Nama Lengkap Bunda</label>
+              <input id="nameInput" placeholder="Contoh: Siti Fatimah" value="Fitriyah" required>
+            </div>
+
+            <div class="field">
+              <label>Pilihan Avatar Bunda</label>
+              <select id="avatarInput">
+                <option value="👩🏻">👩🏻 Bunda Manis</option>
+                <option value="🧕">🧕 Bunda Berhijab</option>
+                <option value="👩🏽">👩🏽 Bunda Rambut Gelombang</option>
+                <option value="🤰🏻">🤰🏻 Ibu Hamil</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Usia Ibu (Tahun)</label>
+              <input id="ageInput" type="number" min="15" max="55" value="26" required>
+            </div>
+
+            <div class="field">
+              <label>Usia Kehamilan Saat Ini (Minggu)</label>
+              <input id="weekInput" type="number" min="1" max="42" value="16" required>
+            </div>
+
+            <div class="field">
+              <label>Hari Pertama Haid Terakhir (HPHT)</label>
+              <input id="hphtInput" type="date">
+            </div>
+
+            <div class="field">
+              <label>Perkiraan Tanggal Lahir (HPL)</label>
+              <input id="dueInput" type="date" value="2027-02-20">
+            </div>
+
+            <div class="field">
+              <label>Kehamilan Ke- (Gravida)</label>
+              <input id="pregInput" type="number" min="1" max="15" value="1">
+            </div>
+
+            <div class="field">
+              <label>Golongan Darah</label>
+              <select id="bloodInput">
+                <option value="O (Rhesus +)">O (Rhesus +)</option>
+                <option value="A (Rhesus +)">A (Rhesus +)</option>
+                <option value="B (Rhesus +)">B (Rhesus +)</option>
+                <option value="AB (Rhesus +)">AB (Rhesus +)</option>
+                <option value="Lainnya">Lainnya</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Kabupaten di Madura / Jawa Timur</label>
+              <select id="regionInput">
+                <option value="Bangkalan">Bangkalan</option>
+                <option value="Sampang">Sampang</option>
+                <option value="Pamekasan">Pamekasan</option>
+                <option value="Sumenep">Sumenep</option>
+                <option value="Surabaya">Surabaya</option>
+                <option value="Lainnya">Lainnya</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label>Puskesmas / Klinik Pendamping</label>
+              <input id="faskesInput" placeholder="Contoh: Puskesmas Kamal" value="Puskesmas Kamal">
+            </div>
+          </div>
+
+          <div style="margin-top:20px; display:flex; align-items:center; gap:14px;">
+            <button class="btn" type="submit">💾 Simpan Perubahan Data</button>
+            <span id="savedMsg" style="font-size:13px; font-weight:700; color:#2d8a57;"></span>
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ================= SCREEN 8: PENGATURAN NOTIFIKASI ================= -->
+    <section class="screen" id="settings">
+      <div class="card">
+        <div class="cardhead">
+          <div class="cardhead-title">
+            <h3>Pengaturan Notifikasi & Preferensi</h3>
+            <div class="sub">Atur pemberitahuan cerdas agar tidak melewatkan waktu penting kehamilan Bunda.</div>
+          </div>
+        </div>
+
+        <div class="settingrow">
+          <div>
+            <strong>Pengingat Tablet Tambah Darah (TTD)</strong>
+            <p>Alarm harian malam hari agar patuh minum TTD demi mencegah anemia dan stunting.</p>
+          </div>
+          <input class="toggle" type="checkbox" id="setTtd" checked>
+        </div>
+
+        <div class="settingrow">
+          <div>
+            <strong>Pengingat Jadwal Pemeriksaan ANC</strong>
+            <p>Pemberitahuan 3 hari dan 1 hari sebelum jadwal kontrol ke bidan atau dokter.</p>
+          </div>
+          <input class="toggle" type="checkbox" id="setAnc" checked>
+        </div>
+
+        <div class="settingrow">
+          <div>
+            <strong>Pengingat Hidrasi Air Minum</strong>
+            <p>Notifikasi berkala setiap 2 jam untuk minum satu gelas air putih.</p>
+          </div>
+          <input class="toggle" type="checkbox" id="setWater" checked>
+        </div>
+
+        <div class="settingrow">
+          <div>
+            <strong>Inspirasi Menu Gizi Lokal Harian</strong>
+            <p>Rekomendasi masakan sehat khas Madura setiap pagi pukul 07.00 WIB.</p>
+          </div>
+          <input class="toggle" type="checkbox" id="setFood" checked>
+        </div>
+
+        <div class="settingrow">
+          <div>
+            <strong>Efek Suara Nada Lembut (Chime)</strong>
+            <p>Bunyi nada lembut yang menenangkan saat menyelesaikan tugas atau pengingat.</p>
+          </div>
+          <input class="toggle" type="checkbox" id="setSound" checked>
+        </div>
+
+        <div class="formgrid" style="margin-top:20px;">
+          <div class="field">
+            <label>Bahasa Aplikasi</label>
+            <select id="setLang">
+              <option value="id">Bahasa Indonesia</option>
+              <option value="mad">Basa Madura (Segera Hadir)</option>
+              <option value="en">English</option>
+            </select>
+          </div>
+          <div class="field">
+            <label>Waktu Alarm TTD Harian</label>
+            <input type="time" value="19:00" id="setTimeTtd">
+          </div>
+        </div>
+
+        <div style="margin-top:20px; display:flex; gap:12px;">
+          <button class="btn" onclick="saveSettings()">Simpan Pengaturan</button>
+          <button class="btn secondary" onclick="playGentleChime()">🔊 Tes Nada Pengingat</button>
+          <button class="btn outline" onclick="resetDemoData()">Reset Data Demo</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SCREEN 9: PUSAT BANTUAN & KONTAK FASKES ================= -->
+    <section class="screen" id="help">
+      <div class="card">
+        <div class="cardhead">
+          <div class="cardhead-title">
+            <h3>Pusat Bantuan & Kontak Medis Madura</h3>
+            <div class="sub">Informasi penting, pertanyaan umum (FAQ), serta nomor darurat faskes se-Madura.</div>
+          </div>
+        </div>
+
+        <!-- Search Bar -->
+        <div class="field">
+          <input id="helpSearch" placeholder="🔍  Cari pertanyaan seputar kehamilan, TTD, faskes, atau gizi..." oninput="filterHelp()">
+        </div>
+
+        <!-- FAQ Accordion List -->
+        <div id="faqContainer">
+          <div class="faq-item">
+            <div class="faq-header" onclick="toggleFaq(this)">
+              <span>Bagaimana cara terbaik meminum Tablet Tambah Darah (TTD)?</span>
+              <span class="faq-chevron">▼</span>
+            </div>
+            <div class="faq-body">
+              Minumlah TTD pada malam hari sebelum tidur bersama air putih atau air perasan jeruk (kaya vitamin C yang mempercepat penyerapan zat besi). <b>Hindari</b> meminum TTD bersama teh, kopi, atau susu karena kandungan tanin dan kalsium menghambat penyerapan zat besi.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-header" onclick="toggleFaq(this)">
+              <span>Berapa kali minimal pemeriksaan ANC yang disarankan Kemenkes?</span>
+              <span class="faq-chevron">▼</span>
+            </div>
+            <div class="faq-body">
+              Kemenkes RI menetapkan minimal <b>6 kali pemeriksaan</b> selama masa kehamilan: 1x di Trimester 1 (oleh Dokter dengan USG), 2x di Trimester 2 (oleh Bidan/Dokter), dan 3x di Trimester 3 (termasuk 1x oleh Dokter dengan USG menjelang persalinan).
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-header" onclick="toggleFaq(this)">
+              <span>Apakah ibu hamil di Madura boleh mengonsumsi Lorjuk?</span>
+              <span class="faq-chevron">▼</span>
+            </div>
+            <div class="faq-body">
+              <b>Sangat boleh dan dianjurkan!</b> Lorjuk (kerang bambu khas pesisir Madura) adalah sumber protein tinggi, zat besi, dan mineral zinc yang sangat baik untuk pembentukan sel janin dan mencegah stunting. Syarat mutlaknya adalah dimasak hingga <b>matang sempurna</b>.
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <div class="faq-header" onclick="toggleFaq(this)">
+              <span>Apa yang harus dipersiapkan saat kontrol ke Puskesmas?</span>
+              <span class="faq-chevron">▼</span>
+            </div>
+            <div class="faq-body">
+              Siapkan Buku KIA (Kesehatan Ibu dan Anak), Kartu BPJS/KIS yang aktif, KTP asli, serta catatan keluhan atau pertanyaan yang ingin Bunda konsultasikan kepada bidan/dokter.
+            </div>
+          </div>
+        </div>
+
+        <!-- Emergency Contacts in Madura -->
+        <div class="sectiontitle">
+          <div>
+            <h3>Kontak Darurat & Faskes Rujukan Madura</h3>
+            <span style="font-size:12.5px; color:var(--muted)">Hubungi fasilitas kesehatan terdekat jika terjadi tanda bahaya kehamilan</span>
+          </div>
+        </div>
+
+        <div class="cards3">
+          <div class="card" style="background:#fffafa;">
+            <div style="font-size:24px; margin-bottom:6px;">🏥</div>
+            <h3 style="font-size:15px">RSUD Syamrabu Bangkalan</h3>
+            <p style="font-size:12px; color:var(--muted); margin:4px 0 10px;">Jl. Pemuda Kaffa No.9, Bangkalan</p>
+            <a href="tel:0313095118" class="btn sm outline full">📞 (031) 3095118</a>
+          </div>
+
+          <div class="card" style="background:#fffafa;">
+            <div style="font-size:24px; margin-bottom:6px;">🏥</div>
+            <h3 style="font-size:15px">RSUD dr. Mohammad Zyn Sampang</h3>
+            <p style="font-size:12px; color:var(--muted); margin:4px 0 10px;">Jl. Rajawali No.10, Sampang</p>
+            <a href="tel:0323321018" class="btn sm outline full">📞 (0323) 321018</a>
+          </div>
+
+          <div class="card" style="background:#fffafa;">
+            <div style="font-size:24px; margin-bottom:6px;">🏥</div>
+            <h3 style="font-size:15px">RSUD dr. H. Moh. Anwar Sumenep</h3>
+            <p style="font-size:12px; color:var(--muted); margin:4px 0 10px;">Jl. Dr. Cipto No.42, Sumenep</p>
+            <a href="tel:0328662118" class="btn sm outline full">📞 (0328) 662118</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SCREEN 10: TENTANG APLIKASI ================= -->
+    <section class="screen" id="about">
+      <div class="card">
+        <div style="display:flex; align-items:center; gap:20px; background:linear-gradient(135deg, #fbe5ea 0%, #f7ced7 100%); padding:24px; border-radius:var(--radius-md);">
+          <img src="assets/logo.jpg" alt="Logo MOMP CARE" style="width:76px; height:76px; border-radius:20px; object-fit:cover; background:#fff; padding:4px; box-shadow:0 8px 20px rgba(228,98,133,0.25);">
+          <div>
+            <div class="brand-title" style="font-size:28px;">
+              <span class="pink-part">momp</span> <span class="mint-part">care</span>
+            </div>
+            <span style="font-size:12px; color:var(--pink-deep); font-weight:800; letter-spacing:1.5px;">CARE FOR TWO · MADURA PREGNANCY COMPANION</span>
+          </div>
+        </div>
+
+        <h3 style="margin-top:24px; font-size:18px;">Tentang Inisiatif MOMP CARE</h3>
+        <p style="line-height:1.75; color:var(--ink-secondary); font-size:14px; margin-top:8px;">
+          <b>MOMP CARE</b> adalah platform pendamping digital kehamilan yang dirancang khusus untuk mendampingi para calon ibu di wilayah Madura dan sekitarnya. Aplikasi ini mengintegrasikan pedoman medis nasional (Kemenkes RI) dengan <b>kearifan pangan lokal Madura</b> seperti Lorjuk, Maronggheh (daun kelor), dan Nasi Jagung guna menurunkan prevalensi anemia pada ibu hamil dan mencegah stunting sejak 1.000 Hari Pertama Kehidupan (HPK).
+        </p>
+
+        <div class="listcards" style="margin-top:22px;">
+          <div class="listitem">
+            <div class="listicon">🛡</div>
+            <div>
+              <h3>Pemberdayaan Berbasis Kearifan Lokal</h3>
+              <p>Mengoptimalkan potensi sumber daya gizi pesisir Madura yang melimpah, lezat, dan terjangkau.</p>
+            </div>
+          </div>
+
+          <div class="listitem">
+            <div class="listicon">🔒</div>
+            <div>
+              <h3>Privasi & Keamanan Data Bunda</h3>
+              <p>Seluruh data kehamilan tersimpan aman secara privat di perangkat Anda tanpa pelacakan pihak ketiga.</p>
+            </div>
+          </div>
+
+          <div class="listitem">
+            <div class="listicon">🤝</div>
+            <div>
+              <h3>Dukungan Komunitas & Tenaga Kesehatan</h3>
+              <p>Bersinergi bersama Bidan Desa, Kader Posyandu, dan Puskesmas setempat.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ================= SCREEN 11: AUTENTIKASI / LOGIN SIMULASI ================= -->
+    <section class="screen" id="auth">
+      <div class="auth">
+        <div class="authbrand">
+          <img src="assets/logo.jpg" alt="Logo MOMP CARE" class="auth-logo-img">
+          <div class="brand-title" style="font-size:26px;">
+            <span class="pink-part">momp</span> <span class="mint-part">care</span>
+          </div>
+          <p>Teman Perjalanan Kehamilan Bunda 🌸</p>
+        </div>
+
+        <div id="authfields">
+          <div class="field">
+            <label>Nomor HP / WhatsApp atau Email</label>
+            <input id="loginUser" placeholder="Contoh: 081234567890">
+          </div>
+          <div class="field">
+            <label>Kata Sandi</label>
+            <input type="password" id="loginPass" placeholder="Masukkan kata sandi">
+          </div>
+        </div>
+
+        <button class="btn full" onclick="handleLogin()" id="authActionBtn">Masuk ke MOMP CARE</button>
+
+        <div class="authlinks" id="authswitch">
+          Belum punya akun? <a onclick="showSignup()">Daftar Akun Baru</a>
+        </div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<!-- Mobile Bottom Navigation Bar -->
+<nav class="mobilebar">
+  <button class="active" data-page="home" aria-label="Beranda">
+    <span class="m-ico">⌂</span>
+    <span>Beranda</span>
+  </button>
+  <button data-page="reminders" aria-label="Pengingat">
+    <span class="m-ico">⏰</span>
+    <span>Pengingat</span>
+  </button>
+  <button data-page="nutrition" aria-label="Gizi">
+    <span class="m-ico">🥗</span>
+    <span>Gizi Lokal</span>
+  </button>
+  <button data-page="tools" aria-label="Alat">
+    <span class="m-ico">🧮</span>
+    <span>Alat</span>
+  </button>
+  <button data-page="profile" aria-label="Profil">
+    <span class="m-ico">🪪</span>
+    <span>Profil</span>
+  </button>
+</nav>
+
+<!-- ================= MODALS ================= -->
+<!-- Modal: Tambah Pengingat Baru -->
+<div class="modal-overlay" id="modalAddReminder">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal('modalAddReminder')">✕</button>
+    <h3 class="modal-title">⏰ Tambah Pengingat Baru</h3>
+    <p class="sub" style="margin-bottom:16px;">Pasang alarm untuk rutinitas kehamilan Bunda.</p>
+
+    <div class="field">
+      <label>Nama / Judul Pengingat</label>
+      <input id="remTitle" placeholder="Misal: Minum Tablet Tambah Darah (TTD)">
+    </div>
+
+    <div class="formgrid">
+      <div class="field">
+        <label>Kategori</label>
+        <select id="remCategory">
+          <option value="ttd">💊 Obat & TTD</option>
+          <option value="gizi">🥗 Pola Makan / Gizi</option>
+          <option value="anc">🏥 Kontrol ANC</option>
+          <option value="lifestyle">💧 Hidup Sehat & Istirahat</option>
+        </select>
+      </div>
+      <div class="field">
+        <label>Waktu Alarm</label>
+        <input type="time" id="remTime" value="08:00">
+      </div>
+    </div>
+
+    <div class="field">
+      <label>Frekuensi Pengingat</label>
+      <select id="remRepeat">
+        <option value="Setiap Hari">Setiap Hari</option>
+        <option value="Setiap Pagi & Malam">Setiap Pagi & Malam</option>
+        <option value="Setiap Minggu">Setiap Minggu</option>
+        <option value="Satu Kali Saja">Satu Kali Saja</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Catatan Tambahan</label>
+      <input id="remNote" placeholder="Misal: Minum setelah makan malam">
+    </div>
+
+    <div style="margin-top:20px; display:flex; gap:10px;">
+      <button class="btn full" onclick="saveNewReminder()">Simpan Pengingat</button>
+      <button class="btn secondary" onclick="closeModal('modalAddReminder')">Batal</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Tambah Jadwal ANC -->
+<div class="modal-overlay" id="modalAddSchedule">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal('modalAddSchedule')">✕</button>
+    <h3 class="modal-title">🏥 Tambah Jadwal Pemeriksaan</h3>
+    <p class="sub" style="margin-bottom:16px;">Catat janji temu dengan Bidan atau Dokter kandungan.</p>
+
+    <div class="field">
+      <label>Tanggal Pemeriksaan</label>
+      <input type="date" id="schDate" required>
+    </div>
+
+    <div class="field">
+      <label>Tempat / Faskes</label>
+      <input id="schPlace" placeholder="Misal: Puskesmas Kamal" value="Puskesmas Kamal">
+    </div>
+
+    <div class="field">
+      <label>Waktu / Jam</label>
+      <input type="time" id="schTime" value="08:30">
+    </div>
+
+    <div class="field">
+      <label>Tujuan / Jenis Kontrol</label>
+      <select id="schType">
+        <option value="Pemeriksaan Rutin Bidan (ANC)">Pemeriksaan Rutin Bidan (ANC)</option>
+        <option value="Pemeriksaan Dokter & USG">Pemeriksaan Dokter & USG</option>
+        <option value="Pemeriksaan Laboratorium (Hb & Darah)">Pemeriksaan Laboratorium (Hb & Darah)</option>
+        <option value="Kelas Ibu Hamil">Kelas Ibu Hamil</option>
+      </select>
+    </div>
+
+    <div class="field">
+      <label>Catatan Persiapan</label>
+      <input id="schNote" placeholder="Misal: Bawa buku KIA dan kartu BPJS" value="Bawa buku KIA dan kartu BPJS">
+    </div>
+
+    <div style="margin-top:20px; display:flex; gap:10px;">
+      <button class="btn full" onclick="saveNewSchedule()">Simpan Jadwal</button>
+      <button class="btn secondary" onclick="closeModal('modalAddSchedule')">Batal</button>
+    </div>
+  </div>
+</div>
+
+<!-- Modal: Detail Nutrisi Makanan Madura (Dengan Foto Realistis Lebar) -->
+<div class="modal-overlay" id="modalFoodDetail">
+  <div class="modal-card">
+    <button class="modal-close" onclick="closeModal('modalFoodDetail')">✕</button>
+    
+    <div class="modal-food-banner">
+      <img id="mFoodImg" src="assets/lorjuk.jpg" alt="Foto Makanan">
+    </div>
+
+    <div style="display:flex; justify-content:space-between; align-items:flex-start; margin-bottom:12px;">
+      <div>
+        <h3 class="modal-title" id="mFoodTitle">Nama Makanan</h3>
+        <span class="pill" id="mFoodCategory">Kategori Gizi</span>
+      </div>
+      <span class="pill gold" id="mFoodOrigin">Khas Madura</span>
+    </div>
+
+    <p style="font-size:13.5px; line-height:1.6; color:var(--ink-secondary)" id="mFoodDescription">
+      Deskripsi lengkap makanan dan manfaatnya bagi kehamilan.
+    </p>
+
+    <div style="margin:18px 0; background:#fffafa; border:1px solid var(--line-light); border-radius:var(--radius-md); padding:14px;">
+      <b style="font-size:12.5px; color:#5b343e; display:block; margin-bottom:8px;">Kandungan Nutrisi Utama:</b>
+      <div style="display:grid; grid-template-columns: repeat(3, 1fr); gap:10px; text-align:center;" id="mFoodNutrients">
+        <!-- populated by JS -->
+      </div>
+    </div>
+
+    <div class="foodnotice" style="margin-top:12px;">
+      <span class="icon">👩🏻‍🍳</span>
+      <div id="mFoodTips">Tips memasak aman untuk ibu hamil.</div>
+    </div>
+
+    <button class="btn full sm" style="margin-top:18px;" onclick="closeModal('modalFoodDetail')">Tutup</button>
+  </div>
+</div>
+
+<!-- Toast Container -->
+<div class="toast-container" id="toastContainer"></div>
+
+<!-- ================= JAVASCRIPT LOGIC ================= -->
+<script>
+// Master State & LocalStorage Keys
+const STORAGE_KEYS = {
+  PROFILE: 'momp_care_profile',
+  TASKS: 'momp_care_tasks',
+  WATER: 'momp_care_water',
+  REMINDERS: 'momp_care_reminders',
+  SCHEDULE: 'momp_care_schedule',
+  KICKS: 'momp_care_kicks'
+};
+
+// Default Profile Data
+const defaultProfile = {
+  name: "Bunda Fitri",
+  avatar: "👩🏻",
+  age: 26,
+  week: 16,
+  due: "2027-02-20",
+  hpht: "2026-05-15",
+  pregNum: 1,
+  blood: "O (Rhesus +)",
+  region: "Bangkalan",
+  faskes: "Puskesmas Kamal",
+  bidan: "Bdn. Siti Rohmah, S.Tr.Keb"
+};
+
+// Default Reminders
+const defaultReminders = [
+  { id: 1, title: "Tablet Tambah Darah (TTD)", time: "19.00", category: "ttd", catName: "TTD", repeat: "Setiap hari", note: "Minum dengan air putih/jeruk sesudah makan malam", active: true },
+  { id: 2, title: "Sarapan Gizi Seimbang & Sayur Kelor", time: "07.30", category: "gizi", catName: "Gizi", repeat: "Setiap hari", note: "Asupan zat besi dan karbohidrat kompleks", active: true },
+  { id: 3, title: "Hidrasi Pagi (Gelas ke-2)", time: "09.30", category: "lifestyle", catName: "Hidrasi", repeat: "Setiap hari", note: "Penuhi kebutuhan cairan ketuban", active: true },
+  { id: 4, title: "Makan Siang Berprotein (Lorjuk/Ikan)", time: "12.30", category: "gizi", catName: "Gizi", repeat: "Setiap hari", note: "Protein pembentuk jaringan janin", active: true },
+  { id: 5, title: "Jadwal Pemeriksaan ANC ke Puskesmas", time: "08.30", category: "anc", catName: "ANC", repeat: "12 Nov 2026", note: "Puskesmas Kamal · Kontrol Trimester 2", active: true }
+];
+
+// Default Schedules
+const defaultSchedules = [
+  { id: 1, date: "12 November 2026", time: "08.30 WIB", place: "Puskesmas Kamal", title: "Pemeriksaan Rutin Bidan (ANC K2)", note: "Evaluasi berat badan, tekanan darah, dan cek TTD", status: "Mendatang" },
+  { id: 2, date: "15 Desember 2026", time: "09.00 WIB", place: "RSUD Syamrabu Bangkalan", title: "USG Trimester 2 dengan Dokter Spesialis", note: "Skrining anatomi janin dan posisi plasenta", status: "Rencana" },
+  { id: 3, date: "10 Oktober 2026", time: "08.00 WIB", place: "Puskesmas Kamal", title: "Pemeriksaan Pertama (ANC K1) & Lab", note: "Hb 12.1 g/dL, USG awal normal, Buku KIA aktif", status: "Selesai" }
+];
+
+// Catalog of Madura Local Foods with REALISTIC PHOTO PATHS
+const maduraFoods = {
+  lorjuk: {
+    title: "Lorjuk Madura (Kerang Bambu)",
+    img: "assets/lorjuk.jpg",
+    tag: "🦪 Khas Pesisir",
+    category: "protein",
+    catName: "Protein Tinggi",
+    desc: "Kerang bambu khas pesisir pantai Madura (terkenal di Pamekasan & Bangkalan). Sangat kaya zat besi heme dan zinc alami yang cepat diserap tubuh bumil untuk memproduksi sel darah merah dan mencegah stunting.",
+    nutrients: [
+      { name: "Protein", val: "16g" },
+      { name: "Zat Besi", val: "4.8mg" },
+      { name: "Zinc", val: "3.2mg" }
+    ],
+    tips: "Pilih lorjuk segar dari nelayan terpercaya dan masak hingga matang sempurna (tumis bumbu rujak manis atau oseng cabai hijau tanpa MSG berlebih). Hindari konsumsi mentah."
+  },
+  jagung: {
+    title: "Nasi Jagung Madura (Nasek Jhâghung)",
+    img: "assets/nasi_jagung.jpg",
+    tag: "🌽 Karbohidrat Sehat",
+    category: "karbo",
+    catName: "Karbohidrat Sehat",
+    desc: "Makanan pokok tradisional Madura perpaduan beras dan jagung pipil giling. Memiliki indeks glikemik lebih rendah dibanding nasi putih biasa, sangat ampuh mencegah sembelit dan diabetes gestasional pada ibu hamil.",
+    nutrients: [
+      { name: "Serat", val: "5.5g" },
+      { name: "Vitamin B6", val: "0.4mg" },
+      { name: "Folat", val: "42mcg" }
+    ],
+    tips: "Kombinasikan dengan lauk pepes ikan atau tahu tempe agar asupan asam amino lengkap dan seimbang."
+  },
+  kelor: {
+    title: "Sayur Bening Maronggheh (Daun Kelor)",
+    img: "assets/sayur_kelor.jpg",
+    tag: "🌿 Superfood Alami",
+    category: "superfood",
+    catName: "Superfood Lokal",
+    desc: "Tanaman sakral dan kebanggaan pekarangan warga Madura. Mengandung 3x lebih banyak zat besi dibanding bayam dan kalsium tinggi untuk pertumbuhan tulang & cikal bakal gigi si kecil.",
+    nutrients: [
+      { name: "Kalsium", val: "185mg" },
+      { name: "Zat Besi", val: "4.0mg" },
+      { name: "Vitamin C", val: "51mg" }
+    ],
+    tips: "Masak daun kelor muda dengan bumbu bening temu kunci dan jagung manis. Jangan merebus kelor terlalu lama (cukup 3-4 menit) agar kandungan vitamin dan antioksidannya tidak rusak."
+  },
+  kaldu: {
+    title: "Kaldu Kokot Modifikasi Sehat",
+    img: "assets/kaldu_kokot.jpg",
+    tag: "🥣 Sumber Folat",
+    category: "protein",
+    catName: "Protein & Folat",
+    desc: "Kuliner legendaris Sumenep berupa sup kacang hijau kental berpadu kikil/sumsum sapi. Kacang hijau kaya asam folat penting untuk mencegah cacat tabung saraf janin, sementara sumsum kaya kolagen alami.",
+    nutrients: [
+      { name: "Asam Folat", val: "159mcg" },
+      { name: "Protein", val: "18g" },
+      { name: "Kolagen", val: "Alami" }
+    ],
+    tips: "Modifikasi untuk bumil: buang minyak berlebih di permukaan kaldu setelah matang, gunakan daging/kikil tanpa lemak berlebih, dan nikmati dengan perasan jeruk nipis segar."
+  },
+  tongkol: {
+    title: "Pepes Ikan Laut Bumbu Madura",
+    img: "assets/pepes_ikan.jpg",
+    tag: "🐟 Omega-3 & DHA",
+    category: "protein",
+    catName: "Omega-3 & DHA",
+    desc: "Ikan tongkol atau cakalang segar dari perairan Selat Madura kaya asam lemak tak jenuh Omega-3 (DHA & EPA) yang esensial untuk kecerdasan otak janin dan perkembangan retina mata.",
+    nutrients: [
+      { name: "Omega-3", val: "1.2g" },
+      { name: "Protein", val: "24g" },
+      { name: "Vitamin D", val: "230IU" }
+    ],
+    tips: "Kukus dengan bungkus daun pisang dan rempah kunyit, daun kemangi, serta serai. Menghindari minyak gorengan membantu mengurangi rasa mual pada trimester awal."
+  },
+  topak: {
+    title: "Topak Ladeh Sehat Ramah Bumil",
+    img: "assets/topak_ladeh.jpg",
+    tag: "🍲 Energi Trimester 3",
+    category: "karbo",
+    catName: "Kearifan Budaya",
+    desc: "Hidangan khas Bangkalan berupa lontong berkuah rempah gurih dengan irisan daging sapi empuk dan sayur kacang panjang. Memberikan energi prima bagi ibu hamil pada trimester ketiga.",
+    nutrients: [
+      { name: "Energi", val: "380kkal" },
+      { name: "Zat Besi", val: "3.5mg" },
+      { name: "Protein", val: "15g" }
+    ],
+    tips: "Gunakan santan encer segar atau susu rendah lemak, perbanyak potongan sayuran labu siam dan kacang panjang, serta batasi garam demi kestabilan tekanan darah."
+  }
+};
+
+// Baby Size By Week Table
+const babyDevGuide = {
+  12: { size: "Sebesar Buah Prem 🫐", len: "~5.4 cm", wt: "~14 gr", desc: "Refleks tangan dan kaki mulai aktif, ginjal mulai memproduksi urine." },
+  14: { size: "Sebesar Buah Lemon 🍋", len: "~8.7 cm", wt: "~43 gr", desc: "Janin sudah mulai bisa membuat ekspresi wajah seperti menyipitkan mata." },
+  16: { size: "Sebesar Buah Alpukat 🥑", len: "~11.6 cm", wt: "~100 gr", desc: "Mata mulai peka terhadap cahaya dan telinga mulai mendengar suara Bunda!" },
+  20: { size: "Sebesar Pisang 🍌", len: "~25.6 cm", wt: "~300 gr", desc: "Setengah perjalanan kehamilan! Tendangan dan gerakan janin makin terasa nyata." },
+  24: { size: "Sebesar Jagung Madura 🌽", len: "~30 cm", wt: "~600 gr", desc: "Pendengaran janin makin tajam, paru-paru mulai memproduksi surfaktan." },
+  28: { size: "Sebesar Terong 🍆", len: "~37 cm", wt: "~1.000 gr", desc: "Janin mulai bisa membuka kelopak matanya dan bermimpi saat tidur." },
+  32: { size: "Sebesar Labu Siam 🥬", len: "~42 cm", wt: "~1.700 gr", desc: "Kuku jari kaki & tangan sudah terbentuk lengkap, tulang makin kokoh." },
+  36: { size: "Sebesar Buah Pepaya 🍈", len: "~47 cm", wt: "~2.600 gr", desc: "Janin mulai turun ke rongga panggul sebagai persiapan kelahiran alami." },
+  40: { size: "Sebesar Semangka 🍉", len: "~51 cm", wt: "~3.400 gr", desc: "Buah hati telah siap sepenuhnya untuk menyapa dunia dan pelukan Bunda!" }
+};
+
+// Title dictionary
+const pageTitles = {
+  home: 'Beranda',
+  reminders: 'Pengingat Rutinitas',
+  nutrition: 'Gizi Lokal Madura',
+  schedule: 'Jadwal & Catatan ANC',
+  tools: 'Kalkulator & Alat Kehamilan',
+  profile: 'Profil & Kartu Digital KIA',
+  data: 'Ubah Data Kehamilan',
+  settings: 'Pengaturan Notifikasi',
+  help: 'Pusat Bantuan & Faskes',
+  about: 'Tentang MOMP CARE',
+  auth: 'Selamat Datang'
+};
+
+// --- Web Audio Synthesizer ---
+function playGentleChime() {
+  try {
+    const AudioContext = window.AudioContext || window.webkitAudioContext;
+    if (!AudioContext) return;
+    const ctx = new AudioContext();
+    const osc = ctx.createOscillator();
+    const gain = ctx.createGain();
+
+    osc.type = 'sine';
+    osc.frequency.setValueAtTime(587.33, ctx.currentTime); // D5
+    osc.frequency.exponentialRampToValueAtTime(880, ctx.currentTime + 0.15); // A5
+
+    gain.gain.setValueAtTime(0.15, ctx.currentTime);
+    gain.gain.exponentialRampToValueAtTime(0.001, ctx.currentTime + 0.8);
+
+    osc.connect(gain);
+    gain.connect(ctx.destination);
+
+    osc.start();
+    osc.stop(ctx.currentTime + 0.8);
+  } catch (e) {
+    console.log("Audio not supported or blocked by user gesture");
+  }
+}
+
+// --- Navigation Controller ---
+function go(page) {
+  document.querySelectorAll('.screen').forEach(s => s.classList.toggle('active', s.id === page));
+  document.querySelectorAll('[data-page]').forEach(b => b.classList.toggle('active', b.dataset.page === page));
+  
+  const title = pageTitles[page] || 'MOMP CARE';
+  document.getElementById('pagetitle').textContent = title;
+  window.scrollTo({ top: 0, behavior: 'smooth' });
+}
+
+document.querySelectorAll('[data-page]').forEach(b => {
+  b.addEventListener('click', () => go(b.dataset.page));
+});
+
+// --- Toast System ---
+function showToast(msg, icon = '🌸') {
+  const container = document.getElementById('toastContainer');
+  const toast = document.createElement('div');
+  toast.className = 'toast';
+  toast.innerHTML = `<span>${icon}</span> <span>${msg}</span>`;
+  container.appendChild(toast);
+
+  setTimeout(() => {
+    toast.style.animation = 'slideToast 0.3s reverse forwards';
+    setTimeout(() => toast.remove(), 300);
+  }, 3200);
+}
+
+// --- Profile & Data Manager ---
+function getProfile() {
+  const saved = localStorage.getItem(STORAGE_KEYS.PROFILE);
+  return saved ? JSON.parse(saved) : defaultProfile;
+}
+
+function saveProfile(data) {
+  localStorage.setItem(STORAGE_KEYS.PROFILE, JSON.stringify(data));
+  renderProfileUI(data);
+}
+
+function renderProfileUI(p) {
+  const firstName = (p.name || 'Bunda').split(' ')[0];
+  document.getElementById('greetingName').textContent = firstName;
+  document.getElementById('topAvatar').textContent = p.avatar || '👩🏻';
+  document.getElementById('passportAvatar').textContent = p.avatar || '👩🏻';
+  document.getElementById('cardBundaName').textContent = p.name;
+  document.getElementById('cardBundaAge').textContent = p.age || 26;
+  document.getElementById('cardBundaRegion').textContent = p.region || 'Bangkalan';
+  
+  const week = Number(p.week) || 16;
+  document.getElementById('weeknum').textContent = week;
+  document.getElementById('cardWeek').textContent = week + ' Minggu';
+
+  // Trimester logic
+  let trimText = "Trimester 1";
+  if (week > 27) trimText = "Trimester 3";
+  else if (week > 13) trimText = "Trimester 2";
+  document.getElementById('trimesterTag').textContent = trimText;
+
+  // Days left to HPL (assuming 40 weeks)
+  const remainingWeeks = Math.max(0, 40 - week);
+  document.getElementById('daysleft').textContent = remainingWeeks + ' Minggu';
+  const progressPercent = Math.min(100, Math.round((week / 40) * 100));
+  document.getElementById('hplProgressFill').style.width = progressPercent + '%';
+
+  // HPL string
+  if (p.due) {
+    document.getElementById('hplDateSub').textContent = 'Perkiraan: ' + formatDateIndo(p.due);
+    document.getElementById('cardHpl').textContent = formatDateIndo(p.due);
+  }
+
+  // GPA & Faskes
+  document.getElementById('cardGpa').textContent = `G${p.pregNum || 1} P0 A0`;
+  document.getElementById('cardBlood').textContent = p.blood || 'O (Rhesus +)';
+  document.getElementById('cardFaskes').textContent = p.faskes || 'Puskesmas Kamal';
+  document.getElementById('cardBidan').textContent = p.bidan || 'Bdn. Siti Rohmah, S.Tr.Keb';
+
+  // Update Baby Size in Hero based on week
+  updateBabyDevelopment(week);
+
+  // Sync Form inputs
+  document.getElementById('nameInput').value = p.name || '';
+  document.getElementById('avatarInput').value = p.avatar || '👩🏻';
+  document.getElementById('ageInput').value = p.age || 26;
+  document.getElementById('weekInput').value = week;
+  document.getElementById('dueInput').value = p.due || '';
+  document.getElementById('hphtInput').value = p.hpht || '';
+  document.getElementById('pregInput').value = p.pregNum || 1;
+  document.getElementById('bloodInput').value = p.blood || 'O (Rhesus +)';
+  document.getElementById('regionInput').value = p.region || 'Bangkalan';
+  document.getElementById('faskesInput').value = p.faskes || 'Puskesmas Kamal';
+}
+
+function updateBabyDevelopment(week) {
+  const keys = Object.keys(babyDevGuide).map(Number).sort((a,b) => a - b);
+  let closest = keys[0];
+  for (let k of keys) {
+    if (week >= k) closest = k;
+  }
+  const guide = babyDevGuide[closest] || babyDevGuide[16];
+  document.getElementById('babyIcon').textContent = guide.size.split(' ').pop();
+  document.getElementById('babyTitle').textContent = `Ukuran Janin: ${guide.size}`;
+  document.getElementById('babyDesc').textContent = `Panjang ${guide.len}, berat ${guide.wt}. ${guide.desc}`;
+}
+
+// --- Date Formatting & Greeting ---
+function updateGreetingAndDate() {
+  const now = new Date();
+  const hour = now.getHours();
+  let greet = "Selamat Pagi";
+  if (hour >= 11 && hour < 15) greet = "Selamat Siang";
+  else if (hour >= 15 && hour < 18) greet = "Selamat Sore";
+  else if (hour >= 18 || hour < 4) greet = "Selamat Malam";
+  
+  const greetEl = document.getElementById('timeGreeting');
+  if (greetEl) greetEl.textContent = greet;
+
+  const days = ['Minggu', 'Senin', 'Selasa', 'Rabu', 'Kamis', 'Jumat', 'Sabtu'];
+  const months = ['Jan', 'Feb', 'Mar', 'Apr', 'Mei', 'Jun', 'Jul', 'Agu', 'Sep', 'Okt', 'Nov', 'Des'];
+  const dateStr = `${days[now.getDay()]}, ${now.getDate()} ${months[now.getMonth()]} ${now.getFullYear()}`;
+  const badge = document.getElementById('currentDateStr');
+  if (badge) badge.textContent = dateStr;
+}
+
+function formatDateIndo(dateStr) {
+  if (!dateStr) return "-";
+  const parts = dateStr.split('-');
+  if (parts.length < 3) return dateStr;
+  const months = ['Januari', 'Februari', 'Maret', 'April', 'Mei', 'Juni', 'Juli', 'Agustus', 'September', 'Oktober', 'November', 'Desember'];
+  const d = parseInt(parts[2], 10);
+  const m = months[parseInt(parts[1], 10) - 1] || parts[1];
+  const y = parts[0];
+  return `${d} ${m} ${y}`;
+}
+
+// --- Daily Tasks Checklist Controller ---
+function initTasks() {
+  const saved = localStorage.getItem(STORAGE_KEYS.TASKS);
+  const state = saved ? JSON.parse(saved) : {};
+  const checkboxes = document.querySelectorAll('#tasks input');
+
+  checkboxes.forEach(cb => {
+    const key = cb.dataset.task;
+    cb.checked = !!state[key];
+    cb.parentElement.classList.toggle('done', cb.checked);
+
+    cb.addEventListener('change', () => {
+      state[key] = cb.checked;
+      cb.parentElement.classList.toggle('done', cb.checked);
+      localStorage.setItem(STORAGE_KEYS.TASKS, JSON.stringify(state));
+      updateTaskProgress();
+      if (cb.checked) {
+        playGentleChime();
+        showToast('Tugas sehat selesai! Hebat Bunda 🌸');
+      }
+    });
+  });
+  updateTaskProgress();
+}
+
+function updateTaskProgress() {
+  const checkboxes = document.querySelectorAll('#tasks input');
+  const doneCount = [...checkboxes].filter(c => c.checked).length;
+  const total = checkboxes.length;
+  document.getElementById('progress').textContent = `${doneCount} / ${total}`;
+  const pct = Math.round((doneCount / total) * 100);
+  document.getElementById('taskProgressFill').style.width = pct + '%';
+}
+
+function quickCheckTTD() {
+  const ttdCb = document.querySelector('#tasks input[data-task="ttd"]');
+  if (ttdCb) {
+    ttdCb.checked = true;
+    ttdCb.dispatchEvent(new Event('change'));
+    showToast('Alhamdulillah, Tablet Tambah Darah (TTD) tercatat!');
+  }
+}
+
+// --- Interactive Water Tracker ---
+let currentWaterCups = 0;
+function initWaterTracker() {
+  const saved = localStorage.getItem(STORAGE_KEYS.WATER);
+  currentWaterCups = saved !== null ? Number(saved) : 3;
+  renderWaterCups();
+}
+
+function renderWaterCups() {
+  const container = document.getElementById('waterCupsContainer');
+  container.innerHTML = '';
+  for (let i = 1; i <= 8; i++) {
+    const btn = document.createElement('button');
+    btn.className = `cup-btn ${i <= currentWaterCups ? 'filled' : ''}`;
+    btn.textContent = i <= currentWaterCups ? '🥛' : '🥤';
+    btn.title = `Gelas ke-${i} (250ml)`;
+    btn.onclick = () => toggleWaterCup(i);
+    container.appendChild(btn);
+  }
+
+  const ml = currentWaterCups * 250;
+  document.getElementById('waterCounterTxt').textContent = `${currentWaterCups} / 8 Gelas`;
+  document.getElementById('waterMl').textContent = `${ml} ml / 2000 ml`;
+  const pct = Math.min(100, Math.round((currentWaterCups / 8) * 100));
+  document.getElementById('waterProgressFill').style.width = pct + '%';
+}
+
+function toggleWaterCup(cupIndex) {
+  if (cupIndex === currentWaterCups) {
+    currentWaterCups = cupIndex - 1;
+  } else {
+    currentWaterCups = cupIndex;
+    playGentleChime();
+    showToast(`Hidrasi bertambah: ${currentWaterCups * 250} ml tercapai 💧`);
+  }
+  localStorage.setItem(STORAGE_KEYS.WATER, currentWaterCups);
+  renderWaterCups();
+}
+
+// --- Quick Kick Counter on Dashboard ---
+let quickKicks = 0;
+function addQuickKick() {
+  quickKicks++;
+  playGentleChime();
+  document.getElementById('quickKickCount').textContent = `${quickKicks} Tendangan`;
+  showToast(`Gerakan ke-${quickKicks} tercatat! Sehat selalu ya si kecil 👶`);
+
+  if (quickKicks === 10) {
+    showToast('🎉 Hebat! Target 10 gerakan janin tercapai!');
+  }
+}
+
+// --- Reminders System ---
+function getReminders() {
+  const saved = localStorage.getItem(STORAGE_KEYS.REMINDERS);
+  return saved ? JSON.parse(saved) : defaultReminders;
+}
+
+function saveReminders(arr) {
+  localStorage.setItem(STORAGE_KEYS.REMINDERS, JSON.stringify(arr));
+  renderReminders(arr);
+}
+
+function renderReminders(list, filter = 'all') {
+  const container = document.getElementById('reminderlist');
+  container.innerHTML = '';
+
+  const filtered = filter === 'all' ? list : list.filter(r => r.category === filter);
+
+  if (filtered.length === 0) {
+    container.innerHTML = '<div style="text-align:center; padding:30px; color:var(--muted)">Belum ada pengingat di kategori ini.</div>';
+    return;
+  }
+
+  filtered.forEach(r => {
+    const el = document.createElement('div');
+    el.className = 'listitem';
+    el.innerHTML = `
+      <div class="listicon">${getReminderIcon(r.category)}</div>
+      <div style="flex-grow:1;">
+        <h3>${r.title}</h3>
+        <p>${r.repeat} · Pukul <b>${r.time}</b> ${r.note ? `— ${r.note}` : ''}</p>
+      </div>
+      <div class="right">
+        <input class="toggle" type="checkbox" ${r.active ? 'checked' : ''} onchange="toggleReminderActive(${r.id}, this.checked)" title="Aktifkan/Matikan">
+        <button class="action-icon-btn" onclick="deleteReminder(${r.id})" title="Hapus Pengingat">🗑</button>
+      </div>
+    `;
+    container.appendChild(el);
+  });
+}
+
+function getReminderIcon(cat) {
+  switch (cat) {
+    case 'ttd': return '💊';
+    case 'gizi': return '🥗';
+    case 'anc': return '🏥';
+    case 'lifestyle': return '💧';
+    default: return '🔔';
+  }
+}
+
+function toggleReminderActive(id, isActive) {
+  const list = getReminders();
+  const item = list.find(x => x.id === id);
+  if (item) {
+    item.active = isActive;
+    saveReminders(list);
+    showToast(isActive ? 'Pengingat diaktifkan' : 'Pengingat dinonaktifkan');
+  }
+}
+
+function deleteReminder(id) {
+  if (!confirm('Hapus pengingat ini?')) return;
+  const list = getReminders().filter(x => x.id !== id);
+  saveReminders(list);
+  showToast('Pengingat dihapus');
+}
+
+function filterReminders(cat, btn) {
+  document.querySelectorAll('#reminderTabs .tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderReminders(getReminders(), cat);
+}
+
+function openAddReminderModal() {
+  document.getElementById('remTitle').value = '';
+  document.getElementById('remNote').value = '';
+  openModal('modalAddReminder');
+}
+
+function saveNewReminder() {
+  const title = document.getElementById('remTitle').value.trim();
+  if (!title) {
+    alert('Mohon isi nama pengingat');
+    return;
+  }
+  const time = document.getElementById('remTime').value || '08:00';
+  const category = document.getElementById('remCategory').value;
+  const repeat = document.getElementById('remRepeat').value;
+  const note = document.getElementById('remNote').value.trim();
+
+  const list = getReminders();
+  list.unshift({
+    id: Date.now(),
+    title,
+    time,
+    category,
+    repeat,
+    note,
+    active: true
+  });
+  saveReminders(list);
+  closeModal('modalAddReminder');
+  showToast('Pengingat baru berhasil disimpan! ⏰');
+}
+
+// --- Schedule / ANC Controller ---
+function getSchedules() {
+  const saved = localStorage.getItem(STORAGE_KEYS.SCHEDULE);
+  return saved ? JSON.parse(saved) : defaultSchedules;
+}
+
+function saveSchedules(arr) {
+  localStorage.setItem(STORAGE_KEYS.SCHEDULE, JSON.stringify(arr));
+  renderSchedules(arr);
+}
+
+function renderSchedules(list) {
+  const container = document.getElementById('schedulelist');
+  container.innerHTML = '';
+
+  list.forEach(item => {
+    const el = document.createElement('div');
+    el.className = 'listitem';
+    const isPast = item.status === 'Selesai';
+    el.innerHTML = `
+      <div class="listicon">${isPast ? '✅' : '📅'}</div>
+      <div style="flex-grow:1;">
+        <h3>${item.title}</h3>
+        <p><b>${item.date}</b> (${item.time}) · ${item.place}<br><span style="color:var(--muted)">${item.note || ''}</span></p>
+      </div>
+      <div class="right">
+        <span class="pill ${isPast ? 'mint' : 'gold'}">${item.status}</span>
+        <button class="action-icon-btn" onclick="deleteSchedule(${item.id})" title="Hapus Jadwal">🗑</button>
+      </div>
+    `;
+    container.appendChild(el);
+  });
+}
+
+function deleteSchedule(id) {
+  if (!confirm('Hapus jadwal pemeriksaan ini?')) return;
+  const list = getSchedules().filter(x => x.id !== id);
+  saveSchedules(list);
+  showToast('Jadwal berhasil dihapus');
+}
+
+function openAddScheduleModal() {
+  openModal('modalAddSchedule');
+}
+
+function saveNewSchedule() {
+  const dateVal = document.getElementById('schDate').value;
+  if (!dateVal) {
+    alert('Pilih tanggal pemeriksaan');
+    return;
+  }
+  const title = document.getElementById('schType').value;
+  const place = document.getElementById('schPlace').value || 'Puskesmas Kamal';
+  const time = (document.getElementById('schTime').value || '08.00') + ' WIB';
+  const note = document.getElementById('schNote').value || '';
+
+  const list = getSchedules();
+  list.unshift({
+    id: Date.now(),
+    date: formatDateIndo(dateVal),
+    time,
+    place,
+    title,
+    note,
+    status: 'Mendatang'
+  });
+  saveSchedules(list);
+  closeModal('modalAddSchedule');
+  showToast('Jadwal kontrol ANC berhasil ditambahkan! 🏥');
+}
+
+// --- Nutrition Cards Controller with REALISTIC IMAGES ---
+function renderFoodCatalog(filter = 'all') {
+  const container = document.getElementById('foodContainer');
+  container.innerHTML = '';
+
+  const entries = Object.entries(maduraFoods);
+  const filtered = filter === 'all' ? entries : entries.filter(([k, f]) => f.category === filter);
+
+  filtered.forEach(([key, food]) => {
+    const card = document.createElement('div');
+    card.className = 'card food';
+    card.onclick = () => openFoodDetail(key);
+    card.innerHTML = `
+      <div class="foodimg-wrap">
+        <img src="${food.img}" alt="${food.title}" class="foodimg" loading="lazy">
+        <div class="foodimg-tag">${food.tag}</div>
+      </div>
+      <div class="foodtext">
+        <h3>${food.title}</h3>
+        <p>${food.desc}</p>
+        <div class="badge-row">
+          <span class="pill">${food.catName}</span>
+          <span class="pill mint">Lihat Manfaat →</span>
+        </div>
+      </div>
+    `;
+    container.appendChild(card);
+  });
+}
+
+function filterFoods(cat, btn) {
+  document.querySelectorAll('#nutritionTabs .tab-btn').forEach(b => b.classList.remove('active'));
+  btn.classList.add('active');
+  renderFoodCatalog(cat);
+}
+
+function openFoodDetail(key) {
+  const food = maduraFoods[key];
+  if (!food) return;
+
+  document.getElementById('mFoodImg').src = food.img;
+  document.getElementById('mFoodTitle').textContent = food.title;
+  document.getElementById('mFoodCategory').textContent = food.catName;
+  document.getElementById('mFoodOrigin').textContent = food.tag;
+  document.getElementById('mFoodDescription').textContent = food.desc;
+
+  const nContainer = document.getElementById('mFoodNutrients');
+  nContainer.innerHTML = food.nutrients.map(n => `
+    <div style="background:#fff; border:1px solid var(--line-light); padding:8px; border-radius:10px;">
+      <span style="font-size:11px; color:var(--muted); text-transform:uppercase;">${n.name}</span>
+      <strong style="display:block; font-size:16px; color:var(--pink-deep);">${n.val}</strong>
+    </div>
+  `).join('');
+
+  document.getElementById('mFoodTips').innerHTML = `<b>Saran Penyajian Bumil:</b> ${food.tips}`;
+  openModal('modalFoodDetail');
+}
+
+// --- Pregnancy Tools Calculators ---
+function calculateHPL() {
+  const hphtStr = document.getElementById('calcHphtInput').value;
+  if (!hphtStr) {
+    alert('Masukkan tanggal HPHT terlebih dahulu.');
+    return;
+  }
+  const hpht = new Date(hphtStr);
+  const hplDate = new Date(hpht);
+  hplDate.setDate(hplDate.getDate() + 280);
+
+  const today = new Date();
+  const diffTime = today - hpht;
+  const diffDays = Math.floor(diffTime / (1000 * 60 * 60 * 24));
+  const weeks = Math.floor(diffDays / 7);
+  const daysRemainder = diffDays % 7;
+
+  document.getElementById('resHplDate').textContent = formatDateIndo(hplDate.toISOString().split('T')[0]);
+  document.getElementById('resWeekGestasi').textContent = `${weeks} Minggu ${daysRemainder} Hari`;
+  document.getElementById('hplResultBox').style.display = 'block';
+
+  window.lastCalcResult = {
+    hplDateStr: hplDate.toISOString().split('T')[0],
+    weeks: Math.max(1, weeks)
+  };
+}
+
+function applyHplToProfile() {
+  if (!window.lastCalcResult) return;
+  const p = getProfile();
+  p.due = window.lastCalcResult.hplDateStr;
+  p.week = window.lastCalcResult.weeks;
+  saveProfile(p);
+  showToast('Data HPL & Usia Kehamilan berhasil disinkronkan ke Profil Bunda! 🌸');
+  go('profile');
+}
+
+function calculateBMI() {
+  const h = Number(document.getElementById('calcHeight').value) / 100;
+  const w = Number(document.getElementById('calcWeight').value);
+  if (!h || !w) {
+    alert('Masukkan tinggi dan berat badan pra-hamil.');
+    return;
+  }
+  const bmi = (w / (h * h)).toFixed(1);
+  let target = "11.5 – 16.0 kg (Normal)";
+  if (bmi < 18.5) target = "12.5 – 18.0 kg (Underweight - Tingkatkan asupan kalori)";
+  else if (bmi >= 25 && bmi < 29.9) target = "7.0 – 11.5 kg (Overweight - Kontrol karbohidrat)";
+  else if (bmi >= 30) target = "5.0 – 9.0 kg (Obesitas - Pantau ketat bersama dokter)";
+
+  document.getElementById('resBmiValue').textContent = `${bmi} kg/m²`;
+  document.getElementById('resBmiTarget').textContent = target;
+  document.getElementById('bmiResultBox').style.display = 'block';
+}
+
+// Kick Counter Stopwatch
+let sessionKicks = 0;
+let kickStartTime = null;
+let kickInterval = null;
+
+function tapKick() {
+  if (sessionKicks === 0 && !kickInterval) {
+    kickStartTime = Date.now();
+    kickInterval = setInterval(updateKickTimer, 1000);
+  }
+  sessionKicks++;
+  playGentleChime();
+  document.getElementById('sessionKickCount').textContent = sessionKicks;
+
+  if (sessionKicks >= 10) {
+    clearInterval(kickInterval);
+    kickInterval = null;
+    showToast('🎉 Alhamdulillah! 10 gerakan janin tercapai dalam waktu sehat.');
+  }
+}
+
+function updateKickTimer() {
+  if (!kickStartTime) return;
+  const elapsed = Math.floor((Date.now() - kickStartTime) / 1000);
+  const hrs = String(Math.floor(elapsed / 3600)).padStart(2, '0');
+  const mins = String(Math.floor((elapsed % 3600) / 60)).padStart(2, '0');
+  const secs = String(elapsed % 60).padStart(2, '0');
+  document.getElementById('kickTimerTxt').textContent = `${hrs}:${mins}:${secs}`;
+}
+
+function resetKickSession() {
+  clearInterval(kickInterval);
+  kickInterval = null;
+  kickStartTime = null;
+  sessionKicks = 0;
+  document.getElementById('sessionKickCount').textContent = '0';
+  document.getElementById('kickTimerTxt').textContent = '00:00:00';
+}
+
+// --- Data Form Submit ---
+document.getElementById('dataform').addEventListener('submit', e => {
+  e.preventDefault();
+  const updated = {
+    ...getProfile(),
+    name: document.getElementById('nameInput').value.trim() || 'Bunda',
+    avatar: document.getElementById('avatarInput').value,
+    age: Number(document.getElementById('ageInput').value) || 26,
+    week: Number(document.getElementById('weekInput').value) || 16,
+    due: document.getElementById('dueInput').value,
+    hpht: document.getElementById('hphtInput').value,
+    pregNum: Number(document.getElementById('pregInput').value) || 1,
+    blood: document.getElementById('bloodInput').value,
+    region: document.getElementById('regionInput').value,
+    faskes: document.getElementById('faskesInput').value
+  };
+  saveProfile(updated);
+  
+  const msg = document.getElementById('savedMsg');
+  msg.textContent = '✓ Data berhasil disimpan!';
+  setTimeout(() => msg.textContent = '', 3000);
+  showToast('Data Bunda berhasil diperbarui! 🌸');
+});
+
+// --- Modal Helper Functions ---
+function openModal(modalId) {
+  const m = document.getElementById(modalId);
+  if (m) m.classList.add('open');
+}
+
+function closeModal(modalId) {
+  const m = document.getElementById(modalId);
+  if (m) m.classList.remove('open');
+}
+
+document.querySelectorAll('.modal-overlay').forEach(overlay => {
+  overlay.addEventListener('click', e => {
+    if (e.target === overlay) overlay.classList.remove('open');
+  });
+});
+
+// --- FAQ Accordion ---
+function toggleFaq(header) {
+  const item = header.parentElement;
+  item.classList.toggle('open');
+}
+
+function filterHelp() {
+  const q = document.getElementById('helpSearch').value.toLowerCase();
+  document.querySelectorAll('#faqContainer .faq-item').forEach(item => {
+    const text = item.innerText.toLowerCase();
+    item.style.display = text.includes(q) ? 'block' : 'none';
+  });
+}
+
+function printPassport() {
+  window.print();
+}
+
+function printReport() {
+  window.print();
+}
+
+function saveSettings() {
+  playGentleChime();
+  showToast('Pengaturan notifikasi berhasil disimpan!');
+}
+
+function resetDemoData() {
+  if (!confirm('Kembalikan semua data ke setelan awal demo?')) return;
+  localStorage.clear();
+  location.reload();
+}
+
+function handleLogin() {
+  const user = document.getElementById('loginUser').value.trim() || 'Bunda';
+  showToast(`Selamat datang kembali di MOMP CARE, ${user}! 🌸`);
+  go('home');
+}
+
+function logout() {
+  if (confirm('Keluar dari sesi akun saat ini?')) {
+    go('auth');
+  }
+}
+
+function showSignup() {
+  document.getElementById('authfields').innerHTML = `
+    <div class="field"><label>Nama Lengkap Bunda</label><input placeholder="Contoh: Siti Rahmawati"></div>
+    <div class="field"><label>Nomor WhatsApp</label><input placeholder="08xxxxxxxxxx"></div>
+    <div class="field"><label>Usia Kehamilan (Minggu)</label><input type="number" value="12"></div>
+    <div class="field"><label>Kata Sandi</label><input type="password" placeholder="Minimal 6 karakter"></div>
+  `;
+  document.getElementById('authActionBtn').textContent = 'Daftar Akun Baru';
+  document.getElementById('authActionBtn').onclick = () => {
+    showToast('Pendaftaran simulasi berhasil! Selamat bergabung di MOMP CARE.');
+    go('home');
+  };
+  document.getElementById('authswitch').innerHTML = 'Sudah memiliki akun? <a onclick="location.reload()">Masuk di sini</a>';
+}
+
+// --- App Initialization ---
+window.addEventListener('DOMContentLoaded', () => {
+  updateGreetingAndDate();
+  const profile = getProfile();
+  renderProfileUI(profile);
+  initTasks();
+  initWaterTracker();
+  renderReminders(getReminders());
+  renderSchedules(getSchedules());
+  renderFoodCatalog();
+});
+</script>
+</body>
+</html>
